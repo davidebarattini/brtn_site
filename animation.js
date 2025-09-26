@@ -74,15 +74,15 @@ window.addEventListener('scroll', () => {
 
 
 // ---------------- Pulsante More Projects ----------------
-const moreBtn = document.getElementById("more-projects-btn");
-const projectsRow = document.querySelector(".projects-section .row");
+//const moreBtn = document.getElementById("more-projects-btn");
+//const projectsRow = document.querySelector(".projects-section .row");
 
 // Dati del nuovo progetto
-const newProjectData = {
-  img: "img/project5.png",
-  title: "Nuovo Progetto - Example",
-  desc: "Questa è la descrizione del nuovo progetto che appare cliccando More Projects."
-};
+//const newProjectData = {
+  //img: "img/project5.png",
+  //title: "Nuovo Progetto - Example",
+  //desc: "Questa è la descrizione del nuovo progetto che appare cliccando More Projects."
+//};
 
 // Funzione per creare una card progetto
 
