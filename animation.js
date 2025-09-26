@@ -79,7 +79,7 @@ const projectsRow = document.querySelector(".projects-section .row");
 
 // Dati del nuovo progetto
 const newProjectData = {
-  img: "img/project5.png",
+  img: "img/Project5.jpg",
   title: "Nuovo Progetto - Example",
   desc: "Questa è la descrizione del nuovo progetto che appare cliccando More Projects."
 };
