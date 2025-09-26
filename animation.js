@@ -86,6 +86,7 @@ const newProjectData = {
 
 // Funzione per creare una card progetto
 function createProjectCard(data) {
+   moreBtn.disabled = true;
   const col = document.createElement("div");
   col.className = "col-12 col-md-6";
 
