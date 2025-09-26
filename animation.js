@@ -217,8 +217,8 @@ window.addEventListener('load', () => {
       splash.style.opacity = '0';
       setTimeout(() => {
         splash.remove();
-      }, 1000);
-    }, 1500);
+      }, 500);
+    }, 1000);
 
     // Segna come visto
     sessionStorage.setItem('splashShown', 'true');
