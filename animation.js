@@ -73,56 +73,56 @@ window.addEventListener('scroll', () => {
 });
 
 
-// ---------------- Pulsante More Projects ----------------
-//const moreBtn = document.getElementById("more-projects-btn");
-//const projectsRow = document.querySelector(".projects-section .row");
+//---------------- Pulsante More Projects ----------------
+const moreBtn = document.getElementById("more-projects-btn");
+const projectsRow = document.querySelector(".projects-section .row");
 
 // Dati del nuovo progetto
-//const newProjectData = {
-  //img: "img/project5.png",
-  //title: "Nuovo Progetto - Example",
-  //desc: "Questa è la descrizione del nuovo progetto che appare cliccando More Projects."
-//};
+const newProjectData = {
+  img: "img/project5.png",
+  title: "Nuovo Progetto - Example",
+  desc: "Questa è la descrizione del nuovo progetto che appare cliccando More Projects."
+};
 
 // Funzione per creare una card progetto
 
-//function createProjectCard(data) {
-  //const col = document.createElement("div");
-  //col.className = "col-12 col-md-6";
+function createProjectCard(data) {
+  const col = document.createElement("div");
+  col.className = "col-12 col-md-6";
 
-  //const card = document.createElement("div");
-  //card.className = "project-card";
+  const card = document.createElement("div");
+  card.className = "project-card";
 
-  //const img = document.createElement("img");
-  //img.src = data.img;
-  //img.alt = data.title;
-  //img.className = "img-fluid rounded-2";
-  //img.style.height = "387px";
-  //img.style.objectFit = "cover";
+  const img = document.createElement("img");
+  img.src = data.img;
+  img.alt = data.title;
+  img.className = "img-fluid rounded-2";
+  img.style.height = "387px";
+  img.style.objectFit = "cover";
 
-  //const title = document.createElement("h3");
-  //title.className = "project-title mt-3";
-  //title.textContent = data.title;
+  const title = document.createElement("h3");
+  title.className = "project-title mt-3";
+  title.textContent = data.title;
 
-  //const desc = document.createElement("p");
-  //desc.className = "project-desc";
-  //desc.textContent = data.desc;
+  const desc = document.createElement("p");
+  desc.className = "project-desc";
+  desc.textContent = data.desc;
 
-  //card.appendChild(img);
-  //card.appendChild(title);
-  //card.appendChild(desc);
-  //col.appendChild(card);
+  card.appendChild(img);
+  card.appendChild(title);
+  card.appendChild(desc);
+  col.appendChild(card);
 
-  //return col;
-//}
+  return col;
+}
 
-// Evento click sul pulsante
-//moreBtn.addEventListener("click", function () {
-  //const newCard = createProjectCard(newProjectData);
-  //projectsRow.appendChild(newCard);
-  //newCard.scrollIntoView({ behavior: "smooth" });
-  //moreBtn.disabled = true;
-//});
+//Evento click sul pulsante
+moreBtn.addEventListener("click", function () {
+  const newCard = createProjectCard(newProjectData);
+  projectsRow.appendChild(newCard);
+  newCard.scrollIntoView({ behavior: "smooth" });
+  moreBtn.disabled = true;
+});
 
 
 // ---------------- Hero Image: Zoom lento e cambio immagine ----------------
