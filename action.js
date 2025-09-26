@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Chiudi lightbox
   closeBtn.addEventListener("click", () => {
     lightbox.style.display = "none";
+    lightboxImg.src = ""; //reset
   });
 
   // Navigazione avanti/indietro

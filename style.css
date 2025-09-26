@@ -48,10 +48,19 @@
   transition: opacity 1s ease;
 }
 
+
 .splash-logo {
   max-width: 200px;
   height: auto;
   margin-bottom: 16px; /* spazio sopra la barra di caricamento */
+}
+
+@media (max-width: 576px) {
+.splash-logo {
+  max-width: 128px;
+  height: auto;
+  margin-bottom: 16px; /* spazio sopra la barra di caricamento */
+}
 }
 
 /* Contenitore barra di caricamento */
@@ -345,7 +354,7 @@
 }
 
 .mobile-menu ul.mobile-nav li {
-  margin-bottom: 32px;
+  margin-bottom: 48px;
 }
 
 .mobile-menu ul.mobile-nav li a {
@@ -447,6 +456,10 @@
   margin-bottom: 16px; /* distanza tra titolo e descrizione */
 }
 
+.projects-section .row{
+  margin-top: 24px !important;
+}
+
 /* Descrizione delle card progetto */
 .project-desc {
   color: #595959;
@@ -478,7 +491,7 @@
 
 @media (max-width: 576px) {
   .projects-section {
-    margin-top: 56px;
+    margin-top: 72px;
   }
 }
 
@@ -936,6 +949,12 @@ footer {
   transition: opacity 0.8s ease; /* trasizione */
   cursor: pointer;
 }
+@media (max-width: 576px) {
+.scroll-indicator {
+  bottom: 56px;  /* distanza dal fondo della hero */
+}
+}
+
 
 .scroll-indicator img {
   width: 48px;   /* dimensione freccia */

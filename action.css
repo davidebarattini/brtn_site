@@ -264,7 +264,7 @@ html, body {
 }
 
 .mobile-menu ul.mobile-nav li {
-  margin-bottom: 32px;
+  margin-bottom: 48px;
 }
 
 .mobile-menu ul.mobile-nav li a {
@@ -743,6 +743,7 @@ footer {
 
 /* Immagine dentro la lightbox */
 .lightbox-img {
+  display: block;
   max-width: 80%;
   max-height: 80%;
   border-radius: 8px;
