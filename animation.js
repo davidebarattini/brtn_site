@@ -85,44 +85,44 @@ const newProjectData = {
 };
 
 // Funzione per creare una card progetto
-function createProjectCard(data) {
-   moreBtn.disabled = true;
-  const col = document.createElement("div");
-  col.className = "col-12 col-md-6";
 
-  const card = document.createElement("div");
-  card.className = "project-card";
+//function createProjectCard(data) {
+  //const col = document.createElement("div");
+  //col.className = "col-12 col-md-6";
 
-  const img = document.createElement("img");
-  img.src = data.img;
-  img.alt = data.title;
-  img.className = "img-fluid rounded-2";
-  img.style.height = "387px";
-  img.style.objectFit = "cover";
+  //const card = document.createElement("div");
+  //card.className = "project-card";
 
-  const title = document.createElement("h3");
-  title.className = "project-title mt-3";
-  title.textContent = data.title;
+  //const img = document.createElement("img");
+  //img.src = data.img;
+  //img.alt = data.title;
+  //img.className = "img-fluid rounded-2";
+  //img.style.height = "387px";
+  //img.style.objectFit = "cover";
 
-  const desc = document.createElement("p");
-  desc.className = "project-desc";
-  desc.textContent = data.desc;
+  //const title = document.createElement("h3");
+  //title.className = "project-title mt-3";
+  //title.textContent = data.title;
 
-  card.appendChild(img);
-  card.appendChild(title);
-  card.appendChild(desc);
-  col.appendChild(card);
+  //const desc = document.createElement("p");
+  //desc.className = "project-desc";
+  //desc.textContent = data.desc;
 
-  return col;
-}
+  //card.appendChild(img);
+  //card.appendChild(title);
+  //card.appendChild(desc);
+  //col.appendChild(card);
+
+  //return col;
+//}
 
 // Evento click sul pulsante
-moreBtn.addEventListener("click", function () {
-  const newCard = createProjectCard(newProjectData);
-  projectsRow.appendChild(newCard);
-  newCard.scrollIntoView({ behavior: "smooth" });
-  moreBtn.disabled = true;
-});
+//moreBtn.addEventListener("click", function () {
+  //const newCard = createProjectCard(newProjectData);
+  //projectsRow.appendChild(newCard);
+  //newCard.scrollIntoView({ behavior: "smooth" });
+  //moreBtn.disabled = true;
+//});
 
 
 // ---------------- Hero Image: Zoom lento e cambio immagine ----------------
