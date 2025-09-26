@@ -1,0 +1,973 @@
+/*.container{
+  max-width: 100%;
+}*/
+
+/* Container personalizzato con margini responsive */
+.container-custom {
+  padding-left: 68px;
+  padding-right: 68px;
+}
+
+/* Riduci padding su tablet */
+@media (max-width: 992px) {
+  .container-custom {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+/* Riduci padding su mobile */
+@media (max-width: 576px) {
+  .container-custom {
+    padding-left: 16px;
+    padding-right: 16px;
+    overflow-x: hidden;
+  }
+}
+
+/* Gutter personalizzati */
+.row-custom {
+  --bs-gutter-x: 24px;
+  --bs-gutter-y: 24px;
+}
+
+/* Splash screen */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.splash-logo {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 16px; /* spazio sopra la barra di caricamento */
+}
+
+/* Contenitore barra di caricamento */
+.loading-bar-container {
+  width: 200px; /* stessa larghezza del logo per simmetria */
+  height: 5px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+/* Barra di caricamento animata */
+.loading-bar {
+  width: 0%;
+  height: 100%;
+  background: #000; /* colore della barra */
+  animation: loadProgress 1s ease-in-out forwards; /* durata 1 secondi */
+}
+
+/* Animazione della barra: da 0 a 100% */
+@keyframes loadProgress {
+  0% { width: 0%; }
+  30% { width: 70%; }  /* accelera verso metà */
+  80% { width: 90%; }  /* rallenta verso la fine */
+  100% { width: 100%; }
+}
+
+
+
+
+
+
+
+/* Hero Image */
+.hero-image {
+  background-image: url('img/hero_image.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+
+@media (max-width: 576px) {
+  .hero-image .hero-img-0 {
+    background-position: -650px center !important; /* esempio */
+  }
+  .hero-image .hero-img-1 {
+    background-position: -500px center !important ; /* esempio */
+  }
+  .hero-image .hero-img-2 {
+    background-position: -439px center !important; /* esempio */
+  }
+   .hero-image .hero-img-3 {
+    background-position: -541px center !important; /* esempio */
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-text {
+    margin-top: 176px; /* o qualsiasi valore necessario */
+  }
+}
+
+/* Mobile: max-width 576px */
+@media (max-width: 576px) {
+  .hero-overlay {
+    background: rgba(0, 0, 0, 2.5); /* più scuro rispetto al 0.4 di default */
+  }
+}
+
+
+/* Overlay scuro per il testo */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+}
+
+/* Testo dentro la hero */
+.hero-text {
+  position: relative;
+  font-size: 3.5rem;
+  max-width: 600px;
+  text-align: left;
+  z-index: 1;
+}
+
+.hero-text h1.fw-bold {
+  font-size: 3.5rem !important;
+}
+
+/* Titolo hero desktop */
+.hero-text h1.fw-bold {
+  font-size: 3.5rem !important; /* desktop */
+  line-height: 1.2;
+}
+
+/* Tablet: max-width 992px */
+@media (max-width: 992px) {
+  .hero-text h1.fw-bold {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* Mobile: max-width 576px */
+@media (max-width: 576px) {
+  .hero-text h1.fw-bold {
+    font-size: 2.1rem !important;
+  }
+}
+
+
+
+/* Pulsante "About" */
+.btn-outline-custom {
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.5);
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(6px);
+  border-radius: 40px;
+  padding: 11px 44px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+/* Pulsante "Contact me!" più scuro */
+.btn-dark-custom {
+  background: #000000be;
+  backdrop-filter: blur(6px);
+  color: #fff;
+  border-radius: 40px;
+  padding: 11px 44px;
+  text-decoration: none;
+  font-weight: 500;
+  border: 1px solid #000000d9;
+  transition: all 0.3s ease;
+}
+
+.btn-dark-custom:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Pulsante More Projects normale senza blur */
+.btn-outline-black {
+  color: #000;
+  border: 1px solid #000;
+  background: transparent;
+  border-radius: 40px;
+  padding: 11px 44px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-black:hover {
+  background: #000;
+  color: #fff;
+}
+
+
+
+
+/* ---------------- Navbar ---------------- */
+
+
+
+
+/* Navbar trasparente con leggero sfondo scuro + blur */
+.custom-navbar {
+  background: rgba(0, 0, 0, 0.2); /* leggermente scura */
+  backdrop-filter: blur(6px);     /* sfocatura dietro la navbar */
+  box-shadow: none;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+/* Navbar scura quando si scrolla */
+.custom-navbar.scrolled {
+  background: rgba(0, 0, 0, 0.85) !important; /* più scura */
+  backdrop-filter: blur(6px);                 /* mantiene blur anche quando scura */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+
+/* Mantieni freccetta di Bootstrap, ma resetta eventuali conflitti */
+.nav-item.dropdown .dropdown-toggle::after {
+  transition: transform 0.7s ease; /* animazione fluida */
+}
+
+/* Quando il dropdown è visibile, ruota la freccetta */
+.nav-item.dropdown.show .dropdown-toggle::after,
+.nav-item.dropdown:hover .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+/* Voci della navbar sempre bianche */
+.navbar .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+  color: #f1f1f1 !important;
+}
+
+/* Sposta le voci del menu più a destra con margine extra */
+.nav-middle {
+  margin-right: 116px;
+}
+
+
+
+
+/* Hamburger ------------- */
+.custom-toggler {
+  border: none; /* rimuove il bordo di default */
+  background: none;
+  font-size: 2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Hamburger X animation */
+.custom-toggler.active span {
+  transform: rotate(45deg);
+}
+.custom-toggler.active span::before {
+  transform: rotate(90deg) translateX(0);
+}
+.custom-toggler.active span::after {
+  opacity: 0;
+}
+
+
+
+
+/* Overlay Mobile Menu -----------*/
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 1050;
+  transition: right 0.4s ease;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+/* Close button */
+.mobile-menu .close-menu {
+  position: absolute;
+  top: 24px;
+  right: 16px;
+  border: none;
+  background: none;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+
+/* Voci Menu Mobile ---------------- */
+.mobile-menu ul.mobile-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.mobile-menu ul.mobile-nav li {
+  margin-bottom: 32px;
+}
+
+.mobile-menu ul.mobile-nav li a {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+/* Sottomenù */
+.mobile-menu ul.submenu {
+  list-style: none;
+  padding: 0;
+  margin-top: 24px;
+}
+
+.mobile-menu ul.submenu li {
+  margin-bottom: 16px;
+}
+
+.mobile-menu ul.submenu li a {
+  font-size: 1.1rem;
+}
+
+.mobile-social a {
+  color: #fff;       /* forza bianco */
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0 8px;
+}
+
+
+/* Dropdown Portfolio Desktop: visibile sia hover su link che su menu */
+.nav-item.dropdown:hover > .dropdown-menu,
+.nav-item.dropdown .dropdown-menu:hover {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;          /* subito sotto la navbar */
+  margin-top: 16px;    /* distanza extra di 16px dalla navbar */
+  background-color: rgba(0,0,0,0.2); /* si aggiorna dinamicamente dal JS */
+  backdrop-filter: blur(6px);
+  border: none;
+  min-width: 160px;
+  padding: 8px 0;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1050;
+}
+
+.dropdown-menu a {
+  color: #fff !important;
+  padding: 8px 16px;
+  display: block;
+  font-size: 0.95rem;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+
+
+
+
+
+/* Sezione Projects */
+
+.projects-section {
+  margin-top: 160px; /* distanza dalla hero */
+}
+
+/* Project card */
+.project-card img {
+  width: 100%;
+  height: 386px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 24px; /* distanza tra immagine e titolo */
+}
+
+/* Titolo sezione Project */
+.section-title {
+  font-weight: 700;
+  font-size: 3.5rem;
+  text-align: left;
+}
+
+/* Titolo delle card progetto */
+.project-title {
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 16px; /* distanza tra titolo e descrizione */
+}
+
+/* Descrizione delle card progetto */
+.project-desc {
+  color: #595959;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive per tablet */
+@media (max-width: 992px) {
+  .project-card img {
+    height: 207px;
+  }
+}
+
+/* Responsive per mobile */
+@media (max-width: 576px) {
+  .project-card img {
+    height: 264px;
+}
+}
+
+/* Titolo Projects responsive mobile */
+@media (max-width: 576px) {
+  .projects-section .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-section {
+    margin-top: 56px;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-card .project-title {
+    margin-bottom: 8px; /* più spazio tra titolo e descrizione su mobile */
+  }
+}
+
+@media (max-width: 992px) {
+  .project-card .project-desc {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-card .project-desc {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .projects-section .row {
+    margin-top: 24px;
+  }
+}
+
+/* Distanza tra titolo e griglia */
+.projects-section .row {
+  margin-top: 56px;
+}
+
+/* Spazio verticale tra i progetti */
+.project-card {
+  margin-bottom: 48px;
+  overflow: hidden;
+}
+
+.project-image {
+  margin-bottom: 48px;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.project-image:hover {
+ transform: scale(1.02);
+}
+
+/* ---------------- Category Cards ---------------- */
+
+/* Overlay scuro sulle immagini delle category cards */
+@media (max-width: 576px) {
+  .spaziocard {
+    margin-bottom: 16px;
+  }
+}
+
+.overlay1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3); /* scurisce senza toccare il testo */
+  border-radius: 8px;
+}
+
+.category-img1 {
+  height: 252px;
+  overflow: hidden;
+}
+
+.category-img1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.category-img2 {
+  height: 252px;
+  overflow: hidden;
+}
+
+.category-img2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.category-img3 {
+  height: 252px;
+  overflow: hidden;
+}
+
+.category-img3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.category-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  pointer-events: none;
+}
+
+@media (max-width: 576px) {
+  .category-title {
+    font-size: 20px;
+  }
+}
+
+.category-section {
+  margin-top: 150px; /* distanza tra More Projects e le tre card */
+  margin-bottom: 150px;
+}
+
+@media (max-width: 576px) {
+
+  .category-section {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+}
+
+/* Effetto hover per zoom */
+.category-card:hover img {
+  transform: scale(1.1);
+}
+
+
+/* Responsive tablet */
+@media (max-width: 992px) {
+  .category-img1 {
+    height: 200px;
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 576px) {
+  .category-img1 {
+    height: 94px;
+  }
+}
+
+/* Responsive tablet */
+@media (max-width: 992px) {
+  .category-img2 {
+    height: 200px;
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 576px) {
+  .category-img2 {
+    height: 94px;
+  }
+}
+
+/* Responsive tablet */
+@media (max-width: 992px) {
+  .category-img3 {
+    height: 200px;
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 576px) {
+  .category-img3 {
+    height: 94px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Sposta Action */
+  .category-img1 img {
+    object-position: center -59px;
+  }
+  .category-img2 img {
+    object-position: center -59px;
+  }
+    .category-img3 img {
+    object-position: center -46px;
+  }
+}
+
+
+
+
+/* ---------------- Footer ---------------- */
+footer {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  font-family: inherit;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-logo img {
+  height: 40px;
+}
+
+.footer-link {
+  color: #000 !important;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+
+.footer-links,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.footer-links a,
+.footer-contact a {
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-links .sub-link,
+.footer-contact .sub-info {
+  font-weight: 400;
+  color: #606060;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 0;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 64px;
+  font-size: 14px;
+}
+
+.footer-sub {
+  font-weight: 400;
+  color: #606060 !important;
+  font-size: 14px;
+  text-decoration: none !important;
+  margin-top: 0;
+}
+
+.footer-bottom a {
+  text-decoration: underline;
+  color: #606060 !important;
+  margin-left: 20px;
+}
+
+.footer-bottom p {
+  color: #606060 !important;
+}
+
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+
+
+/* -------- Footer mobile */
+@media (max-width: 576px) {
+
+  .footer {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+  /* contenitore */
+  footer .container-custom {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* struttura verticale e centrata */
+  .footer-top {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 24px; /* spazio verticale tra i blocchi principali */
+    padding-bottom: 0;
+  }
+
+  /* logo (primo elemento) */
+  .footer-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* annullo eventuali margini */
+  }
+  .footer-logo img {
+    display: block;
+    max-width: 128px;
+    height: auto;
+  }
+
+  /* il contenitore delle voci (Projects / Portfolio / About / contatti) */
+  .footer-sections {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px; /* tra le tre voci e poi il blocco mail/phone */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* annulla i margini .me-5 che possono spingere fuori */
+  .footer-sections > .me-5 {
+    margin: 0 !important;
+  }
+
+  /* i link principali (Projects / Portfolio / About) */
+  .footer-sections .footer-link.bold {
+    display: block;
+    color: #000 !important;
+    font-weight: 700;
+    text-decoration: none !important;
+    line-height: 1;
+    font-size: 12px;
+  }
+
+  /* Portfolio -> lista interna, la teniamo verticale e centrata */
+  .footer-sections .portfolio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* distanza tra Action / People / Places */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 12px;
+  }
+  .footer-sections .portfolio-list li a.footer-sub {
+    display: block;
+    color: #606060 !important;
+    text-decoration: none !important;
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  /* blocco mail + telefono (di norma è l'ultimo div dentro .footer-sections) */
+  .footer-sections > div:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px; /* telefono a 16px sotto la mail */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 12px;
+  }
+  .footer-sections > div:last-child .footer-link.bold {
+    margin: 0;
+  }
+  .footer-sections > div:last-child .footer-sub {
+    margin: 0;
+    color: #606060;
+  }
+
+  /* icone social subito dopo le voci (footer-top contiene anche .footer-social) */
+  .footer-social {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* icone distanziate 8px */
+    margin: 0;
+  }
+  .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+  }
+
+  /* footer-bottom: distanza 56px e centrato, poi privacy/cookie sulla stessa riga */
+  .footer-bottom {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px; /* distanza interna tra copyright e link */
+    margin-top: 56px; /* distanza dal resto del footer */
+    padding-bottom: 24px;
+    width: 100%;
+    font-size: 12px;
+  }
+  .footer-bottom p {
+    margin: 0;
+    color: #606060 !important;
+  }
+
+  /* privacy / cookie sulla stessa riga, distanziate 24px */
+  .footer-bottom > div {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-bottom a.footer-bottom-link {
+    color: #606060 !important;
+    text-decoration: underline;
+  }
+
+  /* ulteriore sicurezza: rimuovo overflow orizzontale residuo */
+  footer, .footer-top, .footer-bottom, .footer-sections, .footer-social {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+
+
+
+
+/*bottoni disabilitati*/
+#more-projects-btn:disabled {
+  background: transparent; /* o il colore originale */
+  color: #e5e5e5;             /* colore testo originale */
+  border: 1px solid #e5e5e5;  /* bordo originale */
+  opacity: 1;              /* forza opacità piena */
+  cursor: default;         /* evita "not-allowed" */
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 32px;  /* distanza dal fondo della hero */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  transition: opacity 0.8s ease; /* trasizione */
+  cursor: pointer;
+}
+
+.scroll-indicator img {
+  width: 48px;   /* dimensione freccia */
+  height: auto;
+  opacity: 0.8;
+  animation: bounce 1.5s infinite;
+}
+
+/* animazione rimbalzo */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(8px);
+  }
+  60% {
+    transform: translateY(4px);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

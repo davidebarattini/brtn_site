@@ -1,0 +1,668 @@
+/* Container personalizzato con margini responsive */
+.container-custom {
+  padding-left: 68px;
+  padding-right: 68px;
+}
+
+/* Riduci padding su tablet */
+@media (max-width: 992px) {
+  .container-custom {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+/* Riduci padding su mobile */
+@media (max-width: 576px) {
+  .container-custom {
+    padding-left: 16px;
+    padding-right: 16px;
+    overflow-x: hidden;
+  }
+}
+
+
+/* Gutter personalizzati */
+.row-custom {
+  --bs-gutter-x: 24px;
+  --bs-gutter-y: 24px;
+}
+
+
+/* ---------------- Navbar ---------------- */
+
+
+.custom-navbar {
+  background: rgba(0, 0, 0, 0.85); /* scura */
+  backdrop-filter: blur(6px);     /* sfocatura dietro la navbar */
+  box-shadow: none;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+
+/* Mantieni freccetta di Bootstrap, ma resetta eventuali conflitti */
+.nav-item.dropdown .dropdown-toggle::after {
+  transition: transform 0.7s ease; /* animazione fluida */
+}
+
+/* Quando il dropdown è visibile, ruota la freccetta */
+.nav-item.dropdown.show .dropdown-toggle::after,
+.nav-item.dropdown:hover .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+/* Voci della navbar sempre bianche */
+.navbar .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+  color: #f1f1f1 !important;
+}
+
+/* Sposta le voci del menu più a destra con margine extra */
+.nav-middle {
+  margin-right: 116px;
+}
+
+
+
+
+/* Hamburger ------------- */
+.custom-toggler {
+  border: none; /* rimuove il bordo di default */
+  background: none;
+  font-size: 2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Hamburger X animation */
+.custom-toggler.active span {
+  transform: rotate(45deg);
+}
+.custom-toggler.active span::before {
+  transform: rotate(90deg) translateX(0);
+}
+.custom-toggler.active span::after {
+  opacity: 0;
+}
+
+
+
+
+/* Overlay Mobile Menu -----------*/
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 1050;
+  transition: right 0.4s ease;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+/* Close button */
+.mobile-menu .close-menu {
+  position: absolute;
+  top: 24px;
+  right: 16px;
+  border: none;
+  background: none;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+
+/* Voci Menu Mobile ---------------- */
+.mobile-menu ul.mobile-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.mobile-menu ul.mobile-nav li {
+  margin-bottom: 32px;
+}
+
+.mobile-menu ul.mobile-nav li a {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+/* Sottomenù */
+.mobile-menu ul.submenu {
+  list-style: none;
+  padding: 0;
+  margin-top: 24px;
+}
+
+.mobile-menu ul.submenu li {
+  margin-bottom: 16px;
+}
+
+.mobile-menu ul.submenu li a {
+  font-size: 1.1rem;
+}
+
+.mobile-social a {
+  color: #fff;       /* forza bianco */
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0 8px;
+}
+
+
+/* Dropdown Portfolio Desktop: visibile sia hover su link che su menu */
+.nav-item.dropdown:hover > .dropdown-menu,
+.nav-item.dropdown .dropdown-menu:hover {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;          /* subito sotto la navbar */
+  margin-top: 16px;    /* distanza extra di 16px dalla navbar */
+  background-color: rgba(0,0,0,0.2); /* si aggiorna dinamicamente dal JS */
+  backdrop-filter: blur(6px);
+  border: none;
+  min-width: 160px;
+  padding: 8px 0;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1050;
+}
+
+.dropdown-menu a {
+  color: #fff !important;
+  padding: 8px 16px;
+  display: block;
+  font-size: 0.95rem;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+/* Titolo in alto a sinistra */
+.page-title {
+  text-align: left;
+  font-size: 40px;
+  font-weight: 700;
+  margin-top: 168px;
+}
+
+@media (max-width: 992px) {
+  .page-title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-title {
+    font-size: 28px;
+  }
+}
+
+
+
+
+/* Sezione About Info */
+.about-info {
+  margin-bottom: 120px; /* spazio sotto la sezione */
+}
+
+.about-text-col {
+  margin-top: 24px; /* testo scende di 48px */
+}
+
+.about-text-col p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333 !important;
+  margin-bottom: 8px;
+}
+
+.extra {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 0px;
+}
+
+.about-img-col {
+  display: flex;
+  justify-content: flex-end; /* immagine a destra */
+  margin-top: -56px; /* risale fino al titolo (pari al margin-top del titolo .page-title) */
+}
+
+.about-img {
+  width: 100%;
+  max-width: 528px;
+  height: 543px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+@media (max-width: 991px) {
+  .about-contact{
+    margin-top: 80px;
+  }
+  .about-text-col {
+    margin-top: 24px; /* testo rimane sotto titolo */
+  }
+
+  .about-img-col {
+    margin-top: 24px; /* immagine sotto il testo */
+    justify-content: center; /* centrata */
+  }
+
+  .about-img {
+    max-width: 100%;
+    height: 358px;
+  }
+}
+@media (max-width: 576px) {
+  .about-info {
+  margin-bottom: 80px !important; /* spazio sotto la sezione */
+}
+  .about-text-col {
+    margin-top: 24px; /* testo rimane sotto titolo */
+  }
+
+  .about-img-col {
+    margin-top: 24px; /* immagine sotto il testo */
+    justify-content: center; /* centrata */
+  }
+
+  .about-img {
+    max-width: 100%;
+    height: 358px;
+  }
+  .about-contact {
+  margin-top: 80px !important; /* distanza dal primo blocco testo */
+}
+}
+
+.about-contact {
+  margin-top: 118px; /* distanza dal primo blocco testo */
+}
+
+.contact-title {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #000 !important;
+}
+
+.contact-item {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 0px !important;
+  color: #333 !important;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .about-contact .col-12 {
+    text-align: left; /* resta allineato a sinistra */
+    margin-top: 16px;
+  }
+}
+
+.stay-up-to-date {
+  margin-top: 96px; /* distanza dalla foto */
+}
+
+.stay-up-to-date .page-title {
+  margin-bottom: 12px; /* distanza tra titolo e immagini */
+}
+
+/* Immagini quadrate */
+.stay-img {
+  width: 100%;
+  max-width: 252px;
+  height: 252px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Gutter tra immagini: bootstrap già gestisce 24px, ma per sicurezza */
+.stay-up-to-date .row {
+  gap: 0px;
+  margin-top: 24px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .stay-img {
+    max-width: 100%;
+    height: 178px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stay-img {
+    max-width: 100%;
+    height: 187px;
+    margin-bottom: 16px;
+  }
+}
+
+/* Pulsante Follow Instagram */
+.btn-follow-instagram {
+  color: #fff;           /* testo bianco */
+  background: #000;      /* sfondo nero */
+  border: 1px solid #000;
+  border-radius: 40px;
+  padding: 11px 44px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 64px;    /* distanza dalle immagini */
+  margin-bottom: 64px;
+}
+
+.btn-follow-instagram:hover {
+  background: none;      /* hover leggermente più chiaro */
+  color: #000000;
+}
+
+
+@media (max-width: 992px) {
+  .btn-follow-instagram {
+  margin-top: 64px;    /* distanza dalle immagini */
+  margin-bottom: 64px;  
+}
+}
+
+@media (max-width: 576px) {
+  .btn-follow-instagram {
+  margin-top: 48px;    /* distanza dalle immagini */
+  margin-bottom: 64px;  
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------- Footer ---------------- */
+footer {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  font-family: inherit;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-logo img {
+  height: 40px;
+}
+
+.footer-link {
+  color: #000 !important;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+
+.footer-links,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.footer-links a,
+.footer-contact a {
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-links .sub-link,
+.footer-contact .sub-info {
+  font-weight: 400;
+  color: #606060;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 0;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 64px;
+  font-size: 14px;
+}
+
+.footer-sub {
+  font-weight: 400;
+  color: #606060 !important;
+  font-size: 14px;
+  text-decoration: none !important;
+  margin-top: 0;
+}
+
+.footer-bottom a {
+  text-decoration: underline;
+  color: #606060 !important;
+  margin-left: 20px;
+}
+
+.footer-bottom p {
+  color: #606060 !important;
+}
+
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+
+
+/* -------- Footer mobile */
+@media (max-width: 576px) {
+
+  .footer {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+  /* contenitore */
+  footer .container-custom {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* struttura verticale e centrata */
+  .footer-top {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 24px; /* spazio verticale tra i blocchi principali */
+    padding-bottom: 0;
+  }
+
+  /* logo (primo elemento) */
+  .footer-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* annullo eventuali margini */
+  }
+  .footer-logo img {
+    display: block;
+    max-width: 128px;
+    height: auto;
+  }
+
+  /* il contenitore delle voci (Projects / Portfolio / About / contatti) */
+  .footer-sections {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px; /* tra le tre voci e poi il blocco mail/phone */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* annulla i margini .me-5 che possono spingere fuori */
+  .footer-sections > .me-5 {
+    margin: 0 !important;
+  }
+
+  /* i link principali (Projects / Portfolio / About) */
+  .footer-sections .footer-link.bold {
+    display: block;
+    color: #000 !important;
+    font-weight: 700;
+    text-decoration: none !important;
+    line-height: 1;
+    font-size: 12px;
+  }
+
+  /* Portfolio -> lista interna, la teniamo verticale e centrata */
+  .footer-sections .portfolio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* distanza tra Action / People / Places */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 12px;
+  }
+  .footer-sections .portfolio-list li a.footer-sub {
+    display: block;
+    color: #606060 !important;
+    text-decoration: none !important;
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  /* blocco mail + telefono (di norma è l'ultimo div dentro .footer-sections) */
+  .footer-sections > div:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px; /* telefono a 16px sotto la mail */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 12px;
+  }
+  .footer-sections > div:last-child .footer-link.bold {
+    margin: 0;
+  }
+  .footer-sections > div:last-child .footer-sub {
+    margin: 0;
+    color: #606060;
+  }
+
+  /* icone social subito dopo le voci (footer-top contiene anche .footer-social) */
+  .footer-social {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* icone distanziate 8px */
+    margin: 0;
+  }
+  .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+  }
+
+  /* footer-bottom: distanza 56px e centrato, poi privacy/cookie sulla stessa riga */
+  .footer-bottom {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px; /* distanza interna tra copyright e link */
+    margin-top: 56px; /* distanza dal resto del footer */
+    padding-bottom: 24px;
+    width: 100%;
+    font-size: 12px;
+  }
+  .footer-bottom p {
+    margin: 0;
+    color: #606060 !important;
+  }
+
+  /* privacy / cookie sulla stessa riga, distanziate 24px */
+  .footer-bottom > div {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-bottom a.footer-bottom-link {
+    color: #606060 !important;
+    text-decoration: underline;
+  }
+
+  /* ulteriore sicurezza: rimuovo overflow orizzontale residuo */
+  footer, .footer-top, .footer-bottom, .footer-sections, .footer-social {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* Contact info nell'about text: rimuovo blu e sottolineatura */
+.about-contact a {
+  color: #333 !important;       /* nero */
+  text-decoration: none !important; /* niente sottolineatura */
+}

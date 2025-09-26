@@ -1,0 +1,956 @@
+
+html, body {
+  overflow-x: hidden;
+}
+
+/* Container globale */
+* {
+  box-sizing: border-box;
+}
+
+
+/* Container personalizzato (distanze responsive) */
+.container-custom {
+  padding-left: 68px;
+  padding-right: 68px;
+}
+
+@media (max-width: 992px) {
+  .container-custom {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container-custom {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* Titolo in alto a sinistra */
+.page-title {
+  text-align: left;
+  font-size: 40px;
+  font-weight: 700;
+  margin-top: 168px;
+  margin-bottom: 56px;
+}
+
+@media (max-width: 992px) {
+  .page-title {
+    font-size: 40px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+    margin-top: 116px;
+  }
+}
+
+/* Masonry column layout per immagini Action */
+.action-section .masonry {
+  column-count: 2;       /* due colonne */
+  column-gap: 24px;      /* distanza orizzontale */
+  margin-bottom: 150px;
+  overflow-x: hidden;
+}
+
+.action-section .masonry img {
+  width: 100%;
+  /* border-radius: 8px; radius card masonry */
+  display: block;
+  margin-bottom: 24px;   /* distanza verticale */
+  object-fit: cover;
+}
+
+.img-small {
+  height: 352px;
+}
+
+.img-large {
+  height: 792px;
+}
+
+
+/* Dimensioni desktop */
+.img-small {
+  height: 352px;
+}
+
+.img-large {
+  height: 792px;
+}
+
+
+/* Mobile (max 992px) → versioni scalate */
+@media (max-width: 992px) {
+  .container-custom{
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .img-small {
+    height: 215px; /* circa metà */
+  }
+
+  .img-large {
+    height: 510px; /* più grande ma non enorme */
+  }
+
+  .action-section .masonry {
+    column-count: 2;      /* mantieni due colonne */
+    column-gap: 8px;     /* gutter più stretto */
+    margin-bottom: 80px;
+    padding: 0 16px;      /* margine ai lati */
+  }
+
+  .action-section .masonry img {
+    object-fit: cover;
+    margin-bottom: 8px; /* spaziatura coerente */
+    display: block;
+    width: 100%;
+  }
+}
+
+
+
+/* Mobile (max 576px) → versioni scalate */
+@media (max-width: 576px) {
+  .container-custom{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .img-small {
+    height: 102px; /* circa metà */
+  }
+
+  .img-large {
+    height: 264px; /* più grande ma non enorme */
+  }
+
+  .action-section .masonry {
+    column-count: 2;      /* mantieni due colonne */
+    column-gap: 8px;     /* gutter più stretto */
+    margin-bottom: 80px;
+    padding: 0 16px;      /* margine ai lati */
+  }
+
+  .action-section .masonry img {
+    object-fit: cover;
+    margin-bottom: 8px; /* spaziatura coerente */
+    display: block;
+    width: 100%;
+  }
+}
+
+
+/* ---------------- Navbar ---------------- */
+
+
+
+
+/* Navbar trasparente con leggero sfondo scuro + blur */
+.custom-navbar {
+  background: rgba(0, 0, 0, 0.85); /* leggermente scura */
+  backdrop-filter: blur(6px);     /* sfocatura dietro la navbar */
+  box-shadow: none;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+/* Mantieni freccetta di Bootstrap, ma resetta eventuali conflitti */
+.nav-item.dropdown .dropdown-toggle::after {
+  transition: transform 0.7s ease; /* animazione fluida */
+}
+
+/* Quando il dropdown è visibile, ruota la freccetta */
+.nav-item.dropdown.show .dropdown-toggle::after,
+.nav-item.dropdown:hover .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+/* Voci della navbar sempre bianche */
+.navbar .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+  color: #f1f1f1 !important;
+}
+
+/* Sposta le voci del menu più a destra con margine extra */
+.nav-middle {
+  margin-right: 116px;
+}
+
+
+
+
+/* Hamburger ------------- */
+.custom-toggler {
+  border: none; /* rimuove il bordo di default */
+  background: none;
+  font-size: 2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Hamburger X animation */
+.custom-toggler.active span {
+  transform: rotate(45deg);
+}
+.custom-toggler.active span::before {
+  transform: rotate(90deg) translateX(0);
+}
+.custom-toggler.active span::after {
+  opacity: 0;
+}
+
+
+
+
+/* Overlay Mobile Menu -----------*/
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 1050;
+  transition: right 0.4s ease;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+/* Close button */
+.mobile-menu .close-menu {
+  position: absolute;
+  top: 24px;
+  right: 16px;
+  border: none;
+  background: none;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+
+/* Voci Menu Mobile ---------------- */
+.mobile-menu ul.mobile-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.mobile-menu ul.mobile-nav li {
+  margin-bottom: 32px;
+}
+
+.mobile-menu ul.mobile-nav li a {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+/* Sottomenù */
+.mobile-menu ul.submenu {
+  list-style: none;
+  padding: 0;
+  margin-top: 24px;
+}
+
+.mobile-menu ul.submenu li {
+  margin-bottom: 16px;
+}
+
+.mobile-menu ul.submenu li a {
+  font-size: 1.1rem;
+}
+
+.mobile-social a {
+  color: #fff;       /* forza bianco */
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0 8px;
+}
+
+
+/* Dropdown Portfolio Desktop: visibile sia hover su link che su menu */
+.nav-item.dropdown:hover > .dropdown-menu,
+.nav-item.dropdown .dropdown-menu:hover {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;          /* subito sotto la navbar */
+  margin-top: 16px;    /* distanza extra di 16px dalla navbar */
+  background-color: rgba(0,0,0,0.2); /* si aggiorna dinamicamente dal JS */
+  backdrop-filter: blur(6px);
+  border: none;
+  min-width: 160px;
+  padding: 8px 0;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1050;
+}
+
+.dropdown-menu a {
+  color: #fff !important;
+  padding: 8px 16px;
+  display: block;
+  font-size: 0.95rem;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+
+
+/* ---------------- Category Cards ---------------- */
+
+/* Overlay scuro sulle immagini delle category cards */
+@media (max-width: 576px) {
+  .spaziocard {
+    margin-bottom: 16px;
+  }
+}
+
+.overlay1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3); /* scurisce senza toccare il testo */
+  border-radius: 8px;
+}
+
+.category-img1 {
+  height: 252px;
+  overflow: hidden;
+}
+
+.category-img1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.category-img2 {
+  height: 252px;
+  overflow: hidden;
+}
+
+.category-img2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.category-img3 {
+  height: 252px;
+  overflow: hidden;
+}
+
+.category-img3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.category-title {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  pointer-events: none;
+}
+
+@media (max-width: 576px) {
+  .category-title {
+    font-size: 20px;
+  }
+}
+
+.category-section {
+  margin-top: 150px; /* distanza tra More Projects e le tre card */
+  margin-bottom: 150px;
+}
+
+@media (max-width: 576px) {
+
+  .category-section {
+    margin-top: 64px;
+    margin-bottom: 64px;
+  }
+}
+
+/* Effetto hover per zoom */
+.category-card:hover img {
+  transform: scale(1.1);
+}
+
+
+/* Responsive tablet */
+@media (max-width: 992px) {
+  .category-img1 {
+    height: 200px;
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 576px) {
+  .category-img1 {
+    height: 94px;
+  }
+}
+
+/* Responsive tablet */
+@media (max-width: 992px) {
+  .category-img2 {
+    height: 200px;
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 576px) {
+  .category-img2 {
+    height: 94px;
+  }
+}
+
+/* Responsive tablet */
+@media (max-width: 992px) {
+  .category-img3 {
+    height: 200px;
+  }
+}
+
+/* Responsive mobile */
+@media (max-width: 576px) {
+  .category-img3 {
+    height: 94px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Sposta Action */
+  .category-img1 img {
+    object-position: center -59px;
+  }
+  .category-img2 img {
+    object-position: center -59px;
+  }
+    .category-img3 img {
+    object-position: center -46px;
+  }
+}
+
+
+
+
+
+/* ---------------- Footer ---------------- */
+footer {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 64px;
+  padding-bottom: 64px;
+  font-family: inherit;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-logo img {
+  height: 40px;
+}
+
+.footer-link {
+  color: #000 !important;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+
+.footer-links,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.footer-links a,
+.footer-contact a {
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-links .sub-link,
+.footer-contact .sub-info {
+  font-weight: 400;
+  color: #606060;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 0;
+}
+
+/* Footer bottom */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 64px;
+  font-size: 14px;
+}
+
+.footer-sub {
+  font-weight: 400;
+  color: #606060 !important;
+  font-size: 14px;
+  text-decoration: none !important;
+  margin-top: 0;
+}
+
+.footer-bottom a {
+  text-decoration: underline;
+  color: #606060 !important;
+  margin-left: 20px;
+}
+
+.footer-bottom p {
+  color: #606060 !important;
+}
+
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+
+
+/* -------- Footer mobile */
+@media (max-width: 576px) {
+
+  .footer {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+  /* contenitore */
+  footer .container-custom {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* struttura verticale e centrata */
+  .footer-top {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 24px; /* spazio verticale tra i blocchi principali */
+    padding-bottom: 0;
+  }
+
+  /* logo (primo elemento) */
+  .footer-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* annullo eventuali margini */
+  }
+  .footer-logo img {
+    display: block;
+    max-width: 128px;
+    height: auto;
+  }
+
+  /* il contenitore delle voci (Projects / Portfolio / About / contatti) */
+  .footer-sections {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px; /* tra le tre voci e poi il blocco mail/phone */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* annulla i margini .me-5 che possono spingere fuori */
+  .footer-sections > .me-5 {
+    margin: 0 !important;
+  }
+
+  /* i link principali (Projects / Portfolio / About) */
+  .footer-sections .footer-link.bold {
+    display: block;
+    color: #000 !important;
+    font-weight: 700;
+    text-decoration: none !important;
+    line-height: 1;
+    font-size: 12px;
+  }
+
+  /* Portfolio -> lista interna, la teniamo verticale e centrata */
+  .footer-sections .portfolio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* distanza tra Action / People / Places */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 12px;
+  }
+  .footer-sections .portfolio-list li a.footer-sub {
+    display: block;
+    color: #606060 !important;
+    text-decoration: none !important;
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  /* blocco mail + telefono (di norma è l'ultimo div dentro .footer-sections) */
+  .footer-sections > div:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px; /* telefono a 16px sotto la mail */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 12px;
+  }
+  .footer-sections > div:last-child .footer-link.bold {
+    margin: 0;
+  }
+  .footer-sections > div:last-child .footer-sub {
+    margin: 0;
+    color: #606060;
+  }
+
+  /* icone social subito dopo le voci (footer-top contiene anche .footer-social) */
+  .footer-social {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* icone distanziate 8px */
+    margin: 0;
+  }
+  .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+  }
+
+  /* footer-bottom: distanza 56px e centrato, poi privacy/cookie sulla stessa riga */
+  .footer-bottom {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px; /* distanza interna tra copyright e link */
+    margin-top: 56px; /* distanza dal resto del footer */
+    padding-bottom: 24px;
+    width: 100%;
+    font-size: 12px;
+  }
+  .footer-bottom p {
+    margin: 0;
+    color: #606060 !important;
+  }
+
+  /* privacy / cookie sulla stessa riga, distanziate 24px */
+  .footer-bottom > div {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-bottom a.footer-bottom-link {
+    color: #606060 !important;
+    text-decoration: underline;
+  }
+
+  /* ulteriore sicurezza: rimuovo overflow orizzontale residuo */
+  footer, .footer-top, .footer-bottom, .footer-sections, .footer-social {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+
+
+
+/* ---------------- Lightbox overlay ---------------- */
+
+
+.lightbox {
+  display: none; /* nascosta di default */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Immagine dentro la lightbox */
+.lightbox-img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* Pulsante chiudi */
+.lightbox .close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+}
+
+/* Frecce di navigazione */
+.lightbox .prev {
+  left: 20px; /* distanza dal bordo sinistro */
+}
+
+.lightbox .next {
+  right: 20px; /* distanza dal bordo destro */
+}
+
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 56px;
+  color: white;
+  cursor: pointer;
+  padding: 128px;
+  user-select: none;
+}
+
+
+
+@media (max-width: 576px) {
+.lightbox .prev { left: -9px; }
+.lightbox .next { right: -9px; }
+
+.lightbox .prev:hover,
+.lightbox .next:hover,
+.lightbox .close:hover {
+  color: #ccc;
+}
+
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  padding: 20px;
+  user-select: none;
+}
+
+}
+
+/* -------- Footer mobile: layout centrato e spazi precisi -------- */
+@media (max-width: 576px) {
+  /* contenitore */
+  footer .container-custom {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* struttura verticale e centrata */
+  .footer-top {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 24px; /* spazio verticale tra i blocchi principali */
+    padding-bottom: 0;
+  }
+
+  /* logo (primo elemento) */
+  .footer-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* annullo eventuali margini */
+  }
+  .footer-logo img {
+    display: block;
+    max-width: 128px;
+    height: auto;
+  }
+
+  /* il contenitore delle voci (Projects / Portfolio / About / contatti) */
+  .footer-sections {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px; /* tra le tre voci e poi il blocco mail/phone */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* annulla i margini .me-5 che possono spingere fuori */
+  .footer-sections > .me-5 {
+    margin: 0 !important;
+  }
+
+  /* i link principali (Projects / Portfolio / About) */
+  .footer-sections .footer-link.bold {
+    display: block;
+    color: #000 !important;
+    font-weight: 700;
+    text-decoration: none !important;
+    line-height: 1;
+  }
+
+  /* Portfolio -> lista interna, la teniamo verticale e centrata */
+  .footer-sections .portfolio-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* distanza tra Action / People / Places */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+  .footer-sections .portfolio-list li a.footer-sub {
+    display: block;
+    color: #606060 !important;
+    text-decoration: none !important;
+    font-weight: 400;
+  }
+
+  /* blocco mail + telefono (di norma è l'ultimo div dentro .footer-sections) */
+  .footer-sections > div:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px; /* telefono a 16px sotto la mail */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .footer-sections > div:last-child .footer-link.bold {
+    margin: 0;
+  }
+  .footer-sections > div:last-child .footer-sub {
+    margin: 0;
+    color: #606060;
+  }
+
+  /* icone social subito dopo le voci (footer-top contiene anche .footer-social) */
+  .footer-social {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* icone distanziate 8px */
+    margin: 0;
+  }
+  .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+  }
+
+  /* footer-bottom: distanza 56px e centrato, poi privacy/cookie sulla stessa riga */
+  .footer-bottom {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px; /* distanza interna tra copyright e link */
+    margin-top: 56px; /* distanza dal resto del footer */
+    padding-bottom: 24px;
+    width: 100%;
+  }
+  .footer-bottom p {
+    margin: 0;
+    color: #606060 !important;
+  }
+
+  /* privacy / cookie sulla stessa riga, distanziate 24px */
+  .footer-bottom > div {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-bottom a.footer-bottom-link {
+    color: #606060 !important;
+    text-decoration: underline;
+  }
+
+  /* ulteriore sicurezza: rimuovo overflow orizzontale residuo */
+  footer, .footer-top, .footer-bottom, .footer-sections, .footer-social {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+
+

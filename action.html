@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Action</title>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS personalizzato -->
+  <link rel="stylesheet" href="action.css">
+</head>
+
+<body>
+
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+  <div class="container container-custom">
+    <a class="navbar-brand" href="index.html">
+      <img src="img/logo_white.png" alt="Logo" height="40">
+    </a>
+
+    <!-- Bottone hamburger -->
+    <button class="navbar-toggler custom-toggler d-l-flex d-lg-none" type="button">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Navbar desktop -->
+    <div class="collapse navbar-collapse justify-content-between d-none d-lg-flex" id="navbarContent">
+      <ul class="navbar-nav ms-auto nav-middle mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="portfolioDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">Portfolio</a>
+          <ul class="dropdown-menu" aria-labelledby="portfolioDropdown">
+            <li><a class="dropdown-item" href="action.html">Action</a></li>
+            <li><a class="dropdown-item" href="People.html">People</a></li>
+            <li><a class="dropdown-item" href="Places.html">Places</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+      </ul>
+      <div class="d-flex align-items-center">
+        <a href="mailto:brtn.visuals@gmail.com" class="text-white me-3"><i class="bi bi-envelope-fill"></i></a>
+        <a href="https://www.instagram.com/brtn.visuals" target="_blank" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/davide-barattini" target="_blank" class="text-white"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  <!-- mobile menu -->
+<div id="mobileMenu" class="mobile-menu">
+  <button class="close-menu"><i class="bi bi-x"></i></button>
+  <ul class="mobile-nav">
+    <li><a href="index.html">Projects</a></li>
+    <li class="has-submenu">
+      <a href="#">Portfolio</a>
+      <ul class="submenu">
+        <li><a href="action.html">Action</a></li>
+        <li><a href="People.html">People</a></li>
+        <li><a href="Places.html">Places</a></li>
+      </ul>
+    </li>
+    <li><a href="About.html">About</a></li>
+  </ul>
+
+  <!-- Social icons mobile -->
+  <div class="mobile-social">
+    <a href="mailto:brtn.visuals@gmail.com"><i class="bi bi-envelope-fill"></i></a>
+    <a href="https://www.instagram.com/brtn.visuals" target="_blank"><i class="bi bi-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/davide-barattini" target="_blank"><i class="bi bi-linkedin"></i></a>
+  </div>
+</div>
+
+
+
+  <!-- Titolo -->
+  <div class="container container-custom">
+    <h1 class="page-title">Action</h1>
+  </div>
+
+  <!-- Sezione immagini (Masonry) -->
+  <section class="action-section">
+    <div class="container container-custom masonry" id="action-mansory">
+      <img src="img/Action/Action1.jpg" alt="Action 1" class="img-small rounded-2">
+      <img src="img/Action/Action2.jpg" alt="Action 2" class="img-large rounded-2">
+      <img src="img/Action/Action3.jpg" alt="Action 3" class="img-small rounded-2">
+      <img src="img/Action/Action4.jpg" alt="Action 4" class="img-large rounded-2">
+      <img src="img/Action/Action5.jpg" alt="Action 5" class="img-small rounded-2">
+      <img src="img/Action/Action6.jpg" alt="Action 6" class="img-large rounded-2">
+      <img src="img/Action/Action7.jpg" alt="Action 7" class="img-large rounded-2">
+      <img src="img/Action/Action8.jpg" alt="Action 9" class="img-small rounded-2">
+      <img src="img/Action/Action9.jpg" alt="Action 10" class="img-small rounded-2">
+      <img src="img/Action/Action10.jpg" alt="Action 11" class="img-small rounded-2">
+      <img src="img/Action/Action11.jpg" alt="Action 11" class="img-large rounded-2">
+      <img src="img/Action/Action12.jpg" alt="Action 11" class="img-large rounded-2">
+    </div>
+  </section>
+
+<!-- Sezione Category Cards -->
+<section class="category-section">
+  <div class="container container-custom">
+    <div class="row ">
+      <!-- Prima card -->
+      <div class="col-12 col-md-4 spaziocard">
+        <a href="action.html" class="category-card d-block text-white text-decoration-none">
+          <div class="category-img1 position-relative">
+            <img src="img/section_action_low.jpg" alt="ACTION" class="img-fluid rounded-2">
+            <div class="overlay1"></div>
+            <h3 class="category-title position-absolute top-50 start-50 translate-middle">ACTION</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- Seconda card -->
+      <div class="col-12 col-md-4 spaziocard">
+        <a href="People.html" class="category-card d-block text-white text-decoration-none">
+          <div class="category-img2 position-relative">
+            <img src="img/section_people_low.jpg" alt="PEOPLE" class="img-fluid rounded-2">
+            <div class="overlay1"></div>
+            <h3 class="category-title position-absolute top-50 start-50 translate-middle">PEOPLE</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- Terza card -->
+      <div class="col-12 col-md-4 spaziocard">
+        <a href="Places.html" class="category-card d-block text-white text-decoration-none">
+          <div class="category-img3 position-relative">
+            <img src="img/section_places_low.jpg" alt="PLACES" class="img-fluid rounded-2">
+            <div class="overlay1"></div>
+            <h3 class="category-title position-absolute top-50 start-50 translate-middle">PLACES</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container container-custom">
+    <div class="footer-top d-flex justify-content-between align-items-start">
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="img/logo_nero.png" alt="Logo" height="40">
+      </div>
+
+      <!-- Sezioni -->
+      <div class="footer-sections d-flex">
+        <!-- Projects -->
+        <div class="me-5">
+          <a href="index.html" class="footer-link bold">Projects</a>
+        </div>
+
+        <!-- Portfolio -->
+        <div class="me-5">
+          <a href="#portfolio" class="footer-link bold">Portfolio</a>
+          <ul class="list-unstyled portfolio-list mt-3">
+            <li><a href="action.html" class="footer-sub">Action</a></li>
+            <li><a href="People.html" class="footer-sub">People</a></li>
+            <li><a href="Places.html" class="footer-sub">Places</a></li>
+          </ul>
+        </div>
+
+        <!-- About -->
+        <div class="me-5">
+          <a href="About.html" class="footer-link bold">About</a>
+        </div>
+
+        <!-- Contatti -->
+        <div>
+          <a href="mailto:brtn.visuals@gmail.com" class="footer-link bold">brtn.visuals@gmail.com</a>
+          <p class="footer-sub mt-3">+39 389 2809736</p>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="footer-social d-flex">
+        <a href="mailto:brtn.visuals@gmail.com" class="text-dark me-3"><i class="bi bi-envelope-fill"></i></a>
+        <a href="https://www.instagram.com/brtn.visuals" target="_blank" class="text-dark me-3"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/davide-barattini" target="_blank" class="text-dark"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom d-flex justify-content-between">
+      <p class="mb-0">&copy; 2025 - Davide Barattini, All rights reserved.</p>
+      <div>
+        <a href="#" class="footer-bottom-link">Privacy Policy</a> 
+        <a href="#" class="footer-bottom-link">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-img" src="" alt="">
+  <span class="prev">&#10094;</span>
+  <span class="next">&#10095;</span>
+</div>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS custom -->
+  <script src="action.js"></script>
+</body>
+</html>

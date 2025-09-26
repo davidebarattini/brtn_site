@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garpez Racing - Madesimo Bike Park</title>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- CSS personalizzato -->
+  <link rel="stylesheet" href="Project2.css">
+</head>
+
+<body>
+
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+  <div class="container container-custom">
+    <a class="navbar-brand" href="index.html">
+      <img src="img/logo_white.png" alt="Logo" height="40">
+    </a>
+
+    <!-- Bottone hamburger -->
+    <button class="navbar-toggler custom-toggler d-l-flex d-lg-none" type="button">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Navbar desktop -->
+    <div class="collapse navbar-collapse justify-content-between d-none d-lg-flex" id="navbarContent">
+      <ul class="navbar-nav ms-auto nav-middle mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="portfolioDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">Portfolio</a>
+          <ul class="dropdown-menu" aria-labelledby="portfolioDropdown">
+            <li><a class="dropdown-item" href="action.html">Action</a></li>
+            <li><a class="dropdown-item" href="People.html">People</a></li>
+            <li><a class="dropdown-item" href="Places.html">Places</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+      </ul>
+      <div class="d-flex align-items-center">
+        <a href="mailto:brtn.visuals@gmail.com" class="text-white me-3"><i class="bi bi-envelope-fill"></i></a>
+        <a href="https://www.instagram.com/brtn.visuals" target="_blank" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/davide-barattini" target="_blank" class="text-white"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+  <!-- mobile menu -->
+<div id="mobileMenu" class="mobile-menu">
+  <button class="close-menu"><i class="bi bi-x"></i></button>
+  <ul class="mobile-nav">
+    <li><a href="index.html">Projects</a></li>
+    <li class="has-submenu">
+      <a href="#">Portfolio</a>
+      <ul class="submenu">
+        <li><a href="action.html">Action</a></li>
+        <li><a href="People.html">People</a></li>
+        <li><a href="Places.html">Places</a></li>
+      </ul>
+    </li>
+    <li><a href="About.html">About</a></li>
+  </ul>
+
+  <!-- Social icons mobile -->
+  <div class="mobile-social">
+    <a href="mailto:brtn.visuals@gmail.com"><i class="bi bi-envelope-fill"></i></a>
+    <a href="https://www.instagram.com/brtn.visuals" target="_blank"><i class="bi bi-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/davide-barattini" target="_blank"><i class="bi bi-linkedin"></i></a>
+  </div>
+</div>
+
+
+
+  <!-- Titolo -->
+  <div class="container container-custom">
+    <h1 class="page-title">Garpez Racing - Madesimo Bike Park</h1>
+  <div class="row">
+      <div class="col-12 col-lg-7">
+        <p class="project-subtitle">
+          Two days at Madesimo bikepark, trying out some shots and capturing the flow of the trails. A short project focused on experimenting and having fun on two wheels.
+        </p>
+      </div>
+    </div>
+        <!-- foto titolo-->
+  <div class="row">
+    <div class="col-12">
+      <div class="foto-wrapper">
+        <div class="ratio ratio-16x9">
+          <img src="img/Places/Places4_low.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Sezione immagini + info sotto il video -->
+<div class="container container-custom2">
+  <div class="row">
+    <!-- Colonna sinistra: immagini (prime 6 colonne) -->
+    <div class="col-12 col-lg-3 d-flex flex-column order-2 order-lg-1 masonry">
+      <img src="img/Madesimo/md_7.jpg" alt="Small image" class="img-fluid img-large project-image rounded-2">
+      <img src="img/Madesimo/md_8.jpg" alt="Large image" class="img-fluid img-large project-image rounded-2">
+    </div>
+    
+    <!-- Colonna destra immagini: altre due -->
+<div class="col-12 col-lg-3 d-flex flex-column order-2 order-lg-1 masonry">
+      <img src="img/Madesimo/md_9.jpg" alt="Small image" class="img-fluid img-large project-image rounded-2">
+      <img src="img/Madesimo/md_10.jpg" alt="Large image" class="img-fluid img-large project-image rounded-2">
+    </div>
+    
+
+
+    <!-- Colonna destra: testo (altre 6 colonne) -->
+    <div class=" testo col-12 col-lg-6 d-flex align-items-start justify-content-end order-1 order-lg-2">
+      <div class="project-info text-end">
+        <p><strong>Date:</strong> 14 August 2025</p>
+        <p><strong>Location:</strong> Madesimo, Italy</p>
+        <p><strong>Client:</strong> Personal</p>
+        <p><strong>Equipment:</strong> Sony A7 IV + Sigma 28-70 f/2.8</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+  <!-- Sezione immagini (Masonry) -->
+  <section class="action-section">
+    <div class="container container-custom masonry" id="action-mansory">
+      <img src="img/Madesimo/md_1.jpg" alt="Action 1" class="img-small1 rounded-2">
+      <img src="img/Madesimo/md_2.jpg" alt="Action 2" class="img-large1 rounded-2">
+      <img src="img/Madesimo/md_3.jpg" alt="Action 3" class="img-large1 rounded-2">
+      <img src="img/Madesimo/md_4.jpg" alt="Action 11" class="img-large1 rounded-2">
+      <img src="img/Madesimo/md_5.jpg" alt="Action 4" class="img-large1 rounded-2">
+      <img src="img/Madesimo/md_6.jpg" alt="Action 5" class="img-small1 rounded-2">
+      <!-- <img src="img/" alt="Action 6" class="img-large1 rounded-2">
+      <img src="img/" alt="Action 7" class="img-large1 rounded-2">
+      <img src="img/" alt="Action 9" class="img-large1 rounded-2">
+      <img src="img/" alt="Action 10" class="img-large1 rounded-2">
+      <img src="img/" alt="Action 11" class="img-large1 rounded-2">
+      <img src="img/" alt="Action 11" class="img-small1 rounded-2">-->
+    </div>
+  </section>
+
+
+
+
+
+<!-- Sezione Category Cards -->
+<section class="category-section">
+  <div class="container container-custom">
+    <div class="row ">
+      <!-- Prima card -->
+      <div class="col-12 col-md-4 spaziocard">
+        <a href="action.html" class="category-card d-block text-white text-decoration-none">
+          <div class="category-img1 position-relative">
+            <img src="img/section_action_low.jpg" alt="ACTION" class="img-fluid rounded-2">
+            <div class="overlay1"></div>
+            <h3 class="category-title position-absolute top-50 start-50 translate-middle">ACTION</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- Seconda card -->
+      <div class="col-12 col-md-4 spaziocard">
+        <a href="People.html" class="category-card d-block text-white text-decoration-none">
+          <div class="category-img2 position-relative">
+            <img src="img/section_people_low.jpg" alt="PEOPLE" class="img-fluid rounded-2">
+            <div class="overlay1"></div>
+            <h3 class="category-title position-absolute top-50 start-50 translate-middle">PEOPLE</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- Terza card -->
+      <div class="col-12 col-md-4 spaziocard">
+        <a href="Places.html" class="category-card d-block text-white text-decoration-none">
+          <div class="category-img3 position-relative">
+            <img src="img/section_places_low.jpg" alt="PLACES" class="img-fluid rounded-2">
+            <div class="overlay1"></div>
+            <h3 class="category-title position-absolute top-50 start-50 translate-middle">PLACES</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container container-custom">
+    <div class="footer-top d-flex justify-content-between align-items-start">
+      <!-- Logo -->
+      <div class="footer-logo">
+        <img src="img/logo_nero.png" alt="Logo" height="40">
+      </div>
+
+      <!-- Sezioni -->
+      <div class="footer-sections d-flex">
+        <!-- Projects -->
+        <div class="me-5">
+          <a href="index.html" class="footer-link bold">Projects</a>
+        </div>
+
+        <!-- Portfolio -->
+        <div class="me-5">
+          <a href="#portfolio" class="footer-link bold">Portfolio</a>
+          <ul class="list-unstyled portfolio-list mt-3">
+            <li><a href="action.html" class="footer-sub">Action</a></li>
+            <li><a href="People.html" class="footer-sub">People</a></li>
+            <li><a href="Places.html" class="footer-sub">Places</a></li>
+          </ul>
+        </div>
+
+        <!-- About -->
+        <div class="me-5">
+          <a href="About.html" class="footer-link bold">About</a>
+        </div>
+
+        <!-- Contatti -->
+        <div>
+          <a href="mailto:brtn.visuals@gmail.com" class="footer-link bold">brtn.visuals@gmail.com</a>
+          <p class="footer-sub mt-3">+39 389 2809736</p>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="footer-social d-flex">
+        <a href="mailto:brtn.visuals@gmail.com" class="text-dark me-3"><i class="bi bi-envelope-fill"></i></a>
+        <a href="https://www.instagram.com/brtn.visuals" target="_blank" class="text-dark me-3"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/davide-barattini" target="_blank" class="text-dark"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="footer-bottom d-flex justify-content-between">
+      <p class="mb-0">&copy; 2025 - Davide Barattini, All rights reserved.</p>
+      <div>
+        <a href="#" class="footer-bottom-link">Privacy Policy</a> 
+        <a href="#" class="footer-bottom-link">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-img" src="" alt="">
+  <span class="prev">&#10094;</span>
+  <span class="next">&#10095;</span>
+</div>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JS custom -->
+  <script src="Project2.js"></script>
+</body>
+</html>
