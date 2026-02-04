@@ -472,7 +472,7 @@ html, body {
     object-position: center -59px;
   }
   .category-img2 img {
-    object-position: center -59px;
+    object-position: center;
   }
     .category-img3 img {
     object-position: center -46px;
@@ -952,6 +952,3 @@ footer {
     overflow-x: hidden;
   }
 }
-
-
-
