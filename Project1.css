@@ -288,28 +288,16 @@ html, body {
     margin-bottom: 8px;
     height: 123px;
   }
-}
-
-@media (max-width: 576px) {
   .img-large1 {
     margin-bottom: 8px;
   }
-}
-
-@media (max-width: 576px) {
   .img-small {
     margin-bottom: 8px;
     height: 224px;
   }
-}
-
-@media (max-width: 576px) {
   .img-large {
     margin-bottom: 8px;
   }
-}
-
-@media (max-width: 576px) {
   .container-custom2 {
     margin-top: 64px;
   }
@@ -1037,7 +1025,3 @@ footer {
   border-radius: 8px; /* decidi tu quanto arrotondarlo */
   overflow: hidden;    /* nasconde gli angoli esterni dell’iframe */
 }
-
-
-
-

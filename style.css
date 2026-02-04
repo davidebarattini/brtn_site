@@ -222,12 +222,24 @@
   padding: 11px 44px;
   text-decoration: none;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: none;
+  -webkit-tap-highlight-color: transparent; /* Rimuove highlight grigio su mobile */
 }
 
 .btn-outline-black:hover {
   background: #000;
   color: #fff;
+}
+
+/* Fix per stato attivo (click) e focus: evita il grigio/blu di default */
+.btn-outline-black:active {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.btn-outline-black:focus {
+  box-shadow: none !important;
+  border-color: #000 !important; /* Assicura che il bordo resti nero */
 }
 
 
@@ -400,7 +412,7 @@
   position: absolute;
   top: 100%;          /* subito sotto la navbar */
   margin-top: 16px;    /* distanza extra di 16px dalla navbar */
-  background-color: rgba(0,0,0,0.2); /* si aggiorna dinamicamente dal JS */
+  background-color: rgba(0,0,0,0.4); /* Default trasparente (match JS logic) */
   backdrop-filter: blur(6px);
   border: none;
   min-width: 160px;
@@ -409,6 +421,11 @@
   opacity: 0;
   visibility: hidden;
   z-index: 1050;
+  transition: background-color 0.4s ease;
+}
+
+.custom-navbar.scrolled .dropdown-menu {
+  background-color: rgba(0,0,0,0.8); /* Scuro quando navbar è scrolled */
 }
 
 .dropdown-menu a {
@@ -975,18 +992,3 @@ footer {
     transform: translateY(4px);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,6 +1,7 @@
 // ---------------- Navbar che cambia colore quando si scrolla ----------------
-window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".custom-navbar");
+const navbar = document.querySelector(".custom-navbar");
+
+window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
   } else {
@@ -23,8 +24,6 @@ function showDropdown() {
   dropdownMenu.style.display = 'block';
   dropdownMenu.style.opacity = '1';
   dropdownMenu.style.visibility = 'visible';
-  dropdownMenu.style.backdropFilter = 'blur(6px)';
-  dropdownMenu.style.webkitBackdropFilter = 'blur(6px)'; //safari
 }
 
 function hideDropdown() {
@@ -47,30 +46,6 @@ portfolioDropdown.addEventListener('mouseleave', () => {
   }, 150); // piccola tolleranza per passaggio mouse
 });
 
-// Imposta margine del dropdown (16px dalla navbar)
-dropdownMenu.style.marginTop = '16px';
-
-// Aggiorna colore dropdown in base allo scroll
-const dropdownMenus = document.querySelectorAll('.dropdown-menu');
-const navbar = document.querySelector('.custom-navbar');
-
-function updateDropdownBackground() {
-  dropdownMenus.forEach(menu => {
-    if(navbar.classList.contains('scrolled')) {
-      menu.style.backgroundColor = 'rgba(0,0,0,0.8)'; // navbar scura
-    } else {
-      menu.style.backgroundColor = 'rgba(0,0,0,0.4)'; // navbar trasparente
-    }
-  });
-}
-
-// Chiama la funzione all'inizio
-updateDropdownBackground();
-
-// Aggiorna al scroll
-window.addEventListener('scroll', () => {
-  updateDropdownBackground();
-});
 
 
 
@@ -99,6 +74,3 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
     toggler.classList.remove('active');
   });
 });
-
-
-

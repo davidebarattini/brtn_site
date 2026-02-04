@@ -1,10 +1,21 @@
-// ---------------- Navbar che cambia colore quando si scrolla ----------------
-window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".custom-navbar");
-  if (window.scrollY > 50) {
+// ---------------- Gestione Scroll Unificata (Navbar + Dropdown + Freccia) ----------------
+const navbar = document.querySelector(".custom-navbar");
+const scrollIndicator = document.querySelector(".scroll-indicator");
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+
+  // Navbar background
+  if (scrollY > 50) {
     navbar.classList.add("scrolled");
   } else {
     navbar.classList.remove("scrolled");
+  }
+
+  // Scroll indicator (nascondi freccia)
+  if (scrollIndicator) {
+    scrollIndicator.style.opacity = scrollY > 100 ? "0" : "1";
+    scrollIndicator.style.pointerEvents = scrollY > 100 ? "none" : "auto";
   }
 });
 
@@ -23,8 +34,6 @@ function showDropdown() {
   dropdownMenu.style.display = 'block';
   dropdownMenu.style.opacity = '1';
   dropdownMenu.style.visibility = 'visible';
-  dropdownMenu.style.backdropFilter = 'blur(6px)';
-  dropdownMenu.style.webkitBackdropFilter = 'blur(6px)'; //safari
 }
 
 function hideDropdown() {
@@ -47,81 +56,30 @@ portfolioDropdown.addEventListener('mouseleave', () => {
   }, 150); // piccola tolleranza per passaggio mouse
 });
 
-// Imposta margine del dropdown (16px dalla navbar)
-dropdownMenu.style.marginTop = '16px';
-
-// Aggiorna colore dropdown in base allo scroll
-const dropdownMenus = document.querySelectorAll('.dropdown-menu');
-const navbar = document.querySelector('.custom-navbar');
-
-function updateDropdownBackground() {
-  dropdownMenus.forEach(menu => {
-    if(navbar.classList.contains('scrolled')) {
-      menu.style.backgroundColor = 'rgba(0,0,0,0.8)'; // navbar scura
-    } else {
-      menu.style.backgroundColor = 'rgba(0,0,0,0.4)'; // navbar trasparente
-    }
-  });
-}
-
-// Chiama la funzione all'inizio
-updateDropdownBackground();
-
-// Aggiorna al scroll
-window.addEventListener('scroll', () => {
-  updateDropdownBackground();
-});
-
-
-//---------------- Pulsante More Projects ----------------
+// ---------------- Pulsante More Projects ----------------
 const moreBtn = document.getElementById("more-projects-btn");
-const projectsRow = document.querySelector(".projects-section .row");
 
-// Dati del nuovo progetto
-const newProjectData = {
-  img: "img/Project5.jpg",
-  title: "Nuovo Progetto - Example",
-  desc: "Questa è la descrizione del nuovo progetto che appare cliccando More Projects."
-};
-
-// Funzione per creare una card progetto
-
-function createProjectCard(data) {
-  const col = document.createElement("div");
-  col.className = "col-12 col-md-6";
-
-  const card = document.createElement("div");
-  card.className = "project-card";
-
-  const img = document.createElement("img");
-  img.src = data.img;
-  img.alt = data.title;
-  img.className = "img-fluid rounded-2";
-  img.style.height = "387px";
-  img.style.objectFit = "cover";
-
-  const title = document.createElement("h3");
-  title.className = "project-title mt-3";
-  title.textContent = data.title;
-
-  const desc = document.createElement("p");
-  desc.className = "project-desc";
-  desc.textContent = data.desc;
-
-  card.appendChild(img);
-  card.appendChild(title);
-  card.appendChild(desc);
-  col.appendChild(card);
-
-  return col;
-}
-
-//Evento click sul pulsante
+// Evento click sul pulsante
 moreBtn.addEventListener("click", function () {
-  const newCard = createProjectCard(newProjectData);
-  projectsRow.appendChild(newCard);
-  newCard.scrollIntoView({ behavior: "smooth" });
-  moreBtn.disabled = true;
+  const hiddenProjects = document.querySelectorAll(".hidden-project");
+  
+  if (moreBtn.textContent === "Show Less") {
+    // Nascondi i progetti
+    hiddenProjects.forEach(project => project.classList.add("d-none"));
+    moreBtn.textContent = "More Projects";
+    
+    // Torna all'inizio della sezione progetti per non perdere il focus
+    document.querySelector(".projects-section").scrollIntoView({ behavior: "smooth" });
+  } else {
+    // Mostra i progetti
+    hiddenProjects.forEach(project => project.classList.remove("d-none"));
+    moreBtn.textContent = "Show Less";
+    
+    // Scroll fluido verso il primo progetto sbloccato
+    if (hiddenProjects.length > 0) {
+      hiddenProjects[0].scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
 });
 
 
@@ -267,21 +225,4 @@ document.addEventListener("DOMContentLoaded", () => {
       targetSection.scrollIntoView({ behavior: "smooth" });
     }
   });
-
-  // nasconde la freccia dopo scroll
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-      scrollIndicator.style.opacity = "0";
-      scrollIndicator.style.pointerEvents = "none";
-    } else {
-      scrollIndicator.style.opacity = "1";
-      scrollIndicator.style.pointerEvents = "auto";
-    }
-  });
 });
-
-
-
-
-
-
