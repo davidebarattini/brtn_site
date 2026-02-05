@@ -775,6 +775,11 @@ footer {
   margin-top: 0;
 }
 
+.footer-sub a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
 .footer-bottom a {
   text-decoration: underline;
   color: #606060 !important;
