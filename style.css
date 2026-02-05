@@ -108,12 +108,15 @@
     background-position: -650px center !important; /* esempio */
   }
   .hero-image .hero-img-1 {
-    background-position: -500px center !important ; /* esempio */
+    background-position: -150px center !important ; /* esempio */
   }
   .hero-image .hero-img-2 {
     background-position: -439px center !important; /* esempio */
   }
    .hero-image .hero-img-3 {
+    background-position: -541px center !important; /* esempio */
+  }
+  .hero-image .hero-img-5 {
     background-position: -541px center !important; /* esempio */
   }
 }
@@ -692,13 +695,13 @@
 @media (max-width: 576px) {
   /* Sposta Action */
   .category-img1 img {
-    object-position: center -59px;
+    object-position: center;
   }
   .category-img2 img {
     object-position: center;
   }
     .category-img3 img {
-    object-position: center -46px;
+    object-position: center;
   }
 }
 
