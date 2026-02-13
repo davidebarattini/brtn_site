@@ -99,13 +99,13 @@ hero.appendChild(heroImagesContainer);
 
 // Lista immagini
 const images = [
-  'img/hero_image_low.jpg',
-  'img/hero_image8_low.jpg',
-  'img/hero_image2_low.jpg',
-  'img/hero_image3_low.jpg',
-  'img/hero_image10_low.jpg',
-  'img/hero_image11_low.jpg',
-  'img/hero_image6_low.jpg'
+  'img/Hero_image/hero_image_low.jpg',
+  'img/Hero_image/hero_image8_low.jpg',
+  'img/Hero_image/hero_image2_low.jpg',
+  'img/Hero_image/hero_image3_low.jpg',
+  'img/Hero_image/hero_image10_low.jpg',
+  'img/Hero_image/hero_image11_low.jpg',
+  'img/Hero_image/hero_image6_low.jpg'
 ];
 
 let currentIndex = 0;
