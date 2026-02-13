@@ -162,7 +162,7 @@ setInterval(() => {
   heroDivs[currentIndex].style.transform = `scale(${scale})`;
 
   heroDivs[prevIndex].style.opacity = '0';
-}, 7000);
+}, 3000);
 
 
 // ---------------- Splash screen ----------------
