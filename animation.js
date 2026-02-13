@@ -141,7 +141,7 @@ heroDivs[currentIndex].style.opacity = '1';
 
 // Zoom continuo
 let scale = 1;
-const zoomSpeed = 0.00010;
+const zoomSpeed = 0.00015;
 
 function animateZoom() {
   scale += zoomSpeed;
@@ -162,7 +162,7 @@ setInterval(() => {
   heroDivs[currentIndex].style.transform = `scale(${scale})`;
 
   heroDivs[prevIndex].style.opacity = '0';
-}, 3000);
+}, 4000);
 
 
 // ---------------- Splash screen ----------------
