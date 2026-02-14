@@ -168,25 +168,59 @@ setInterval(() => {
 // ---------------- Splash screen ----------------
 window.addEventListener('load', () => {
   const splash = document.getElementById('splash-screen');
+  const loadingBar = document.querySelector('.loading-bar');
 
-  // Controlla se lo splash è già stato visto in questa sessione
-  if (!sessionStorage.getItem('splashShown')) {
-    // Mostra splash
-    splash.style.display = 'flex';
-
-    setTimeout(() => {
-      splash.style.opacity = '0';
-      setTimeout(() => {
-        splash.remove();
-      }, 500);
-    }, 1000);
-
-    // Segna come visto
-    sessionStorage.setItem('splashShown', 'true');
-  } else {
-    // Nascondi subito senza animazione
+  if (sessionStorage.getItem('splashShown')) {
     splash.style.display = 'none';
+    return;
   }
+
+  splash.style.display = 'flex';
+
+  // Tutte le immagini nel DOM
+  const domImages = Array.from(document.querySelectorAll('img'));
+  // Immagini dell'hero section definite in questo file
+  const heroBackgroundImages = images; 
+
+  const allImageUrls = [
+    ...domImages.map(img => img.src),
+    ...heroBackgroundImages.map(url => new URL(url, window.location.href).href)
+  ];
+
+  const totalImages = allImageUrls.length;
+  let loadedImages = 0;
+
+  if (totalImages === 0) {
+    hideSplash();
+    return;
+  }
+
+  function imageLoaded() {
+    loadedImages++;
+    const progress = (loadedImages / totalImages) * 100;
+    if (loadingBar) {
+      loadingBar.style.width = `${progress}%`;
+    }
+    if (loadedImages === totalImages) {
+      // Breve attesa per mostrare il 100% prima di scomparire
+      setTimeout(hideSplash, 300);
+    }
+  }
+
+  function hideSplash() {
+    splash.style.opacity = '0';
+    setTimeout(() => {
+      splash.remove();
+      sessionStorage.setItem('splashShown', 'true');
+    }, 500);
+  }
+
+  allImageUrls.forEach(url => {
+    const img = new Image();
+    img.src = url;
+    img.onload = imageLoaded;
+    img.onerror = imageLoaded; // Conta anche le immagini non riuscite per non bloccare il caricamento
+  });
 });
 
 
