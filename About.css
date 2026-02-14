@@ -122,11 +122,16 @@
   position: absolute;
   top: 24px;
   right: 16px;
-  border: none;
-  background: none;
-  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.75rem; /* Match hamburger padding */
+  font-size: 2.5rem; /* Increased size for better visibility */
   color: #fff;
+  background: none;
+  border: none;
   cursor: pointer;
+  line-height: 1; /* Match bootstrap's .navbar-toggler */
 }
 
 

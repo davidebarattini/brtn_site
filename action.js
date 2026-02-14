@@ -135,6 +135,30 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+
+  // Aggiungi gestione swipe per mobile
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+  });
+
+  lightbox.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+    handleSwipe();
+  });
+
+  function handleSwipe() {
+    const swipeThreshold = 50; // min distance for swipe
+    if (touchStartX - touchEndX > swipeThreshold) {
+      // Swipe left
+      nextBtn.click();
+    } else if (touchEndX - touchStartX > swipeThreshold) {
+      // Swipe right
+      prevBtn.click();
+    }
+  }
 });
 
 //disattivare animazione scrol Navbar
