@@ -69,21 +69,21 @@ html, body {
 }
 
 .img-small {
-  height: 352px;
+
 }
 
 .img-large {
-  height: 792px;
+
 }
 
 
 /* Dimensioni desktop */
 .img-small {
-  height: 352px;
+
 }
 
 .img-large {
-  height: 792px;
+
 }
 
 
@@ -95,11 +95,11 @@ html, body {
   }
 
   .img-small {
-    height: 215px; /* circa metà */
+    
   }
 
   .img-large {
-    height: 510px; /* più grande ma non enorme */
+    
   }
 
   .action-section .masonry {
@@ -127,11 +127,11 @@ html, body {
   }
 
   .img-small {
-    height: 102px; /* circa metà */
+    
   }
 
   .img-large {
-    height: 264px; /* più grande ma non enorme */
+    
   }
 
   .action-section .masonry {

@@ -139,30 +139,33 @@ const heroDivs = images.map((src, index) => {
 // Mostra prima immagine
 heroDivs[currentIndex].style.opacity = '1';
 
-// Zoom continuo
-let scale = 1;
-const zoomSpeed = 0.00015;
+// Funzione per avviare l'animazione dello slider
+function startImageSlider() {
+  // Zoom continuo
+  let scale = 1;
+  const zoomSpeed = 0.00015;
 
-function animateZoom() {
-  scale += zoomSpeed;
-  heroDivs[currentIndex].style.transform = `scale(${scale})`;
-  requestAnimationFrame(animateZoom);
+  function animateZoom() {
+    scale += zoomSpeed;
+    heroDivs[currentIndex].style.transform = `scale(${scale})`;
+    requestAnimationFrame(animateZoom);
+  }
+
+  animateZoom();
+
+  // Cambio immagine ogni 4 secondi
+  setInterval(() => {
+    const prevIndex = currentIndex;
+    currentIndex = (currentIndex + 1) % images.length;
+
+    scale = 1;
+    heroDivs[currentIndex].style.transform = 'scale(1)';
+    heroDivs[currentIndex].style.opacity = '1';
+    heroDivs[currentIndex].style.transform = `scale(${scale})`;
+
+    heroDivs[prevIndex].style.opacity = '0';
+  }, 4000);
 }
-
-animateZoom();
-
-// Cambio immagine ogni 7 secondi
-setInterval(() => {
-  const prevIndex = currentIndex;
-  currentIndex = (currentIndex + 1) % images.length;
-
-  scale = 1;
-  heroDivs[currentIndex].style.transform = 'scale(1)';
-  heroDivs[currentIndex].style.opacity = '1';
-  heroDivs[currentIndex].style.transform = `scale(${scale})`;
-
-  heroDivs[prevIndex].style.opacity = '0';
-}, 4000);
 
 
 // ---------------- Splash screen ----------------
@@ -172,6 +175,7 @@ window.addEventListener('load', () => {
 
   if (sessionStorage.getItem('splashShown')) {
     splash.style.display = 'none';
+    startImageSlider(); // Avvia subito lo slider se lo splash non viene mostrato
     return;
   }
 
@@ -190,6 +194,15 @@ window.addEventListener('load', () => {
   const totalImages = allImageUrls.length;
   let loadedImages = 0;
 
+  function hideSplash() {
+    splash.style.opacity = '0';
+    setTimeout(() => {
+      splash.remove();
+      sessionStorage.setItem('splashShown', 'true');
+      startImageSlider(); // Avvia lo slider dopo aver nascosto lo splash
+    }, 500);
+  }
+
   if (totalImages === 0) {
     hideSplash();
     return;
@@ -205,14 +218,6 @@ window.addEventListener('load', () => {
       // Breve attesa per mostrare il 100% prima di scomparire
       setTimeout(hideSplash, 300);
     }
-  }
-
-  function hideSplash() {
-    splash.style.opacity = '0';
-    setTimeout(() => {
-      splash.remove();
-      sessionStorage.setItem('splashShown', 'true');
-    }, 500);
   }
 
   allImageUrls.forEach(url => {
