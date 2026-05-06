@@ -96,7 +96,7 @@
 
 /* Hero Image */
 .hero-image {
-  background-image: url('img/hero_image.png');
+  background-color: #111;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -130,7 +130,7 @@
 /* Mobile: max-width 576px */
 @media (max-width: 576px) {
   .hero-overlay {
-    background: rgba(0, 0, 0, 2.5); /* più scuro rispetto al 0.4 di default */
+    background: rgba(0, 0, 0, 0.55); /* più scuro rispetto al 0.4 di default */
   }
 }
 
@@ -155,13 +155,9 @@
   z-index: 1;
 }
 
-.hero-text h1.fw-bold {
-  font-size: 3.5rem !important;
-}
-
 /* Titolo hero desktop */
 .hero-text h1.fw-bold {
-  font-size: 3.5rem !important; /* desktop */
+  font-size: 3.5rem !important;
   line-height: 1.2;
 }
 

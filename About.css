@@ -703,3 +703,121 @@ footer {
   color: #333 !important;       /* nero */
   text-decoration: none !important; /* niente sottolineatura */
 }
+
+/* Privacy Policy & Cookie Policy — impaginazione minimal */
+.privacy-page.about-info,
+.cookie-page.about-info {
+  margin-bottom: 120px;
+}
+
+.privacy-doc,
+.cookie-doc {
+  max-width: 640px;
+}
+
+.privacy-doc .privacy-updated,
+.cookie-doc .cookie-updated {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: #666;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.privacy-doc h2,
+.cookie-doc h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111;
+  margin-top: 2.75rem;
+  margin-bottom: 1rem;
+  line-height: 1.35;
+}
+
+.privacy-doc h2:first-of-type,
+.cookie-doc h2:first-of-type {
+  margin-top: 0;
+}
+
+.privacy-doc h3,
+.cookie-doc h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222;
+  margin-top: 1.75rem;
+  margin-bottom: 0.65rem;
+  line-height: 1.4;
+}
+
+.privacy-doc h4,
+.cookie-doc h4 {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.privacy-doc p,
+.privacy-doc address,
+.cookie-doc p,
+.cookie-doc address {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.privacy-doc address,
+.cookie-doc address {
+  font-style: normal;
+}
+
+.privacy-doc ul,
+.cookie-doc ul {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.privacy-doc li,
+.cookie-doc li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 0.4rem;
+}
+
+.privacy-doc .privacy-service-block,
+.cookie-doc .cookie-service-block {
+  margin-bottom: 1.75rem;
+}
+
+.privacy-doc a,
+.cookie-doc a {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.privacy-doc a:hover,
+.cookie-doc a:hover {
+  color: #444;
+}
+
+/* Cookie: dopo il testo introduttivo il primo h2 non è in cima all’articolo */
+.cookie-doc h2:first-of-type {
+  margin-top: 2.75rem;
+}
+
+@media (max-width: 576px) {
+  .privacy-doc h2,
+  .cookie-doc h2 {
+    font-size: 1.05rem;
+    margin-top: 2.25rem;
+  }
+
+  .cookie-doc h2:first-of-type {
+    margin-top: 2.25rem;
+  }
+}
