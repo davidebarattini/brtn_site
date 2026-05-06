@@ -1038,7 +1038,14 @@ footer {
   }
 }
 
-.video-wrapper {
+.foto-wrapper {
   border-radius: 8px; /* decidi tu quanto arrotondarlo */
   overflow: hidden;    /* nasconde gli angoli esterni dell’iframe */
+}
+
+.foto-wrapper .ratio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* mantiene proporzioni */
+  border-radius: 8px;  /* opzionale */
 }
