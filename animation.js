@@ -51,8 +51,9 @@ if (hero) {
 
   function createHeroImageDiv(src) {
     const div = document.createElement("div");
+    div.classList.add("hero-slide-layer");
     div.style.cssText =
-      "background-size:cover;background-position:center;position:absolute;top:0;left:0;width:100%;height:100%;transition:opacity 1s ease;opacity:0;transform:scale(1)";
+      "background-size:cover;background-position:center;position:absolute;top:0;left:0;width:100%;height:100%;transition:opacity 1s ease;opacity:0;transform:translate3d(0,0,0) scale(1)";
     div.style.backgroundImage = `url(${src})`;
     return div;
   }
@@ -68,19 +69,27 @@ if (hero) {
 
   function startImageSlider() {
     let scale = 1;
-    const zoomSpeed = 0.00015;
+    /** Incremento scala per ms (~equiv. a +0.00015/frame a 60 Hz): fluido su 60/120 Hz */
+    const zoomSpeedPerMs = 0.000009;
+    let lastTs = null;
 
-    function animateZoom() {
+    function animateZoom(ts) {
       if (heroSliderStopped) return;
+      let dt = 0;
+      if (lastTs !== null) {
+        dt = Math.min(ts - lastTs, 34);
+      }
+      lastTs = ts;
+
       const active = heroDivs[currentIndex];
-      if (active) {
-        scale += zoomSpeed;
-        active.style.transform = `scale(${scale})`;
+      if (active && dt > 0) {
+        scale += zoomSpeedPerMs * dt;
+        active.style.transform = `translate3d(0, 0, 0) scale(${scale})`;
       }
       zoomRafId = requestAnimationFrame(animateZoom);
     }
 
-    animateZoom();
+    requestAnimationFrame(animateZoom);
 
     sliderIntervalId = window.setInterval(() => {
       const prevIndex = currentIndex;
@@ -88,7 +97,7 @@ if (hero) {
 
       scale = 1;
       heroDivs[currentIndex].style.opacity = "1";
-      heroDivs[currentIndex].style.transform = "scale(1)";
+      heroDivs[currentIndex].style.transform = "translate3d(0, 0, 0) scale(1)";
 
       heroDivs[prevIndex].style.opacity = "0";
     }, 4000);

@@ -103,6 +103,12 @@
   position: relative;
 }
 
+/* Slide hero: GPU layer per zoom fluido (animation.js) */
+.hero-slide-layer {
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
 @media (max-width: 576px) {
   .hero-image .hero-img-0 {
     background-position: -650px center !important; /* esempio */
