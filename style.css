@@ -45,47 +45,20 @@
   justify-content: center;
   z-index: 9999;
   opacity: 1;
-  transition: opacity 1s ease;
+  transition: opacity 650ms ease;
 }
 
 
 .splash-logo {
   max-width: 200px;
   height: auto;
-  margin-bottom: 16px; /* spazio sopra la barra di caricamento */
 }
 
 @media (max-width: 576px) {
 .splash-logo {
   max-width: 128px;
   height: auto;
-  margin-bottom: 16px; /* spazio sopra la barra di caricamento */
 }
-}
-
-/* Contenitore barra di caricamento */
-.loading-bar-container {
-  width: 200px; /* stessa larghezza del logo per simmetria */
-  height: 5px;
-  background: rgba(0,0,0,0.1);
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-/* Barra di caricamento animata */
-.loading-bar {
-  width: 0%;
-  height: 100%;
-  background: #000; /* colore della barra */
-  animation: loadProgress 1s ease-in-out forwards; /* durata 1 secondi */
-}
-
-/* Animazione della barra: da 0 a 100% */
-@keyframes loadProgress {
-  0% { width: 0%; }
-  30% { width: 70%; }  /* accelera verso metà */
-  80% { width: 90%; }  /* rallenta verso la fine */
-  100% { width: 100%; }
 }
 
 

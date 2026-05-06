@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll(".masonry img");
   const lightbox = document.getElementById("lightbox");
-  if (!lightbox || images.length === 0) return;
+  const masonries = Array.from(document.querySelectorAll(".masonry"));
+  if (!lightbox || masonries.length === 0) return;
 
   const lightboxImg = lightbox.querySelector(".lightbox-img");
   const closeBtn = lightbox.querySelector(".close");
@@ -10,14 +10,31 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!lightboxImg || !closeBtn || !prevBtn || !nextBtn) return;
 
   let currentIndex = 0;
+  let activeMasonry = masonries[0];
+
+  function getImages() {
+    return Array.from(activeMasonry.querySelectorAll("img"));
+  }
 
   function showImage() {
+    const images = getImages();
+    if (images.length === 0) return;
+    currentIndex = (currentIndex + images.length) % images.length;
     lightboxImg.src = images[currentIndex].src;
     lightboxImg.alt = images[currentIndex].alt;
   }
 
-  images.forEach((img, index) => {
-    img.addEventListener("click", () => {
+  masonries.forEach((masonry) => {
+    masonry.addEventListener("click", (e) => {
+      const target = e.target;
+      if (!(target instanceof HTMLImageElement)) return;
+
+      activeMasonry = masonry;
+
+      const images = getImages();
+      const index = images.indexOf(target);
+      if (index < 0) return;
+
       currentIndex = index;
       showImage();
       lightbox.style.display = "flex";
@@ -30,12 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % images.length;
+    currentIndex += 1;
     showImage();
   });
 
   prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    currentIndex -= 1;
     showImage();
   });
 
@@ -43,11 +60,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (lightbox.style.display !== "flex") return;
     if (e.key === "Escape") lightbox.style.display = "none";
     if (e.key === "ArrowRight") {
-      currentIndex = (currentIndex + 1) % images.length;
+      currentIndex += 1;
       showImage();
     }
     if (e.key === "ArrowLeft") {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      currentIndex -= 1;
       showImage();
     }
   });

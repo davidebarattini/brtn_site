@@ -112,7 +112,6 @@ if (hero) {
   // ---------------- Splash screen ----------------
   window.addEventListener("load", () => {
     const splash = document.getElementById("splash-screen");
-    const loadingBar = document.querySelector(".loading-bar");
 
     if (!splash) {
       startImageSlider();
@@ -142,7 +141,7 @@ if (hero) {
         splash.remove();
         sessionStorage.setItem("splashShown", "true");
         startImageSlider();
-      }, 500);
+      }, 650);
     }
 
     if (totalImages === 0) {
@@ -152,10 +151,6 @@ if (hero) {
 
     function imageLoaded() {
       loadedImages++;
-      const progress = (loadedImages / totalImages) * 100;
-      if (loadingBar) {
-        loadingBar.style.width = `${progress}%`;
-      }
       if (loadedImages === totalImages) {
         setTimeout(hideSplash, 300);
       }

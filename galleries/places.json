@@ -1,0 +1,71 @@
+{
+  "title": "Places",
+  "generatedAt": "2026-05-06T15:43:02.571Z",
+  "images": [
+    {
+      "src": "img/Places/01_Places1_low.jpg",
+      "alt": "",
+      "orientation": "auto"
+    },
+    {
+      "src": "img/Places/02_Places12.jpg",
+      "alt": "",
+      "orientation": "auto"
+    },
+    {
+      "src": "img/Places/03_Places10.jpg",
+      "alt": "",
+      "orientation": "auto"
+    },
+    {
+      "src": "img/Places/04_Places8.jpg",
+      "alt": "",
+      "orientation": "auto"
+    },
+    {
+      "src": "img/Places/05_Places9.jpg",
+      "alt": "",
+      "orientation": "auto"
+    },
+    {
+      "src": "img/Places/06_Places4_low.jpg",
+      "alt": "",
+      "orientation": "auto"
+    },
+    {
+      "src": "img/Places/07_Places11.jpg",
+      "alt": "",
+      "orientation": "auto"
+    },
+    {
+      "src": "img/Places/08_Places2_low.jpg",
+      "alt": "",
+      "orientation": "auto"
+    },
+    {
+      "src": "img/Places/09_Places13.jpg",
+      "alt": "",
+      "orientation": "auto"
+    },
+    {
+      "src": "img/Places/10_Places14.jpg",
+      "alt": "",
+      "orientation": "auto"
+    },
+    {
+      "src": "img/Places/11_Places15.jpg",
+      "alt": "",
+      "orientation": "auto"
+    },
+    {
+      "src": "img/Places/12_Places16.jpg",
+      "alt": "",
+      "orientation": "auto"
+    },
+    {
+      "src": "img/Places/13_Places17.jpg",
+      "alt": "",
+      "orientation": "auto"
+    }
+  ]
+}

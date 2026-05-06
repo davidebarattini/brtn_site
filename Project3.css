@@ -288,6 +288,39 @@ html, body {
     margin-bottom: 24px;
 }
 
+/* Gallerie generate: rapporto fisso (come Action/People/Places) */
+[data-project-gallery] .gallery-item {
+  width: 100%;
+  overflow: hidden;
+  break-inside: avoid;
+  margin-bottom: 24px;
+}
+
+[data-project-gallery] .gallery-item[data-orientation="landscape"] {
+  aspect-ratio: 3 / 2;
+}
+
+[data-project-gallery] .gallery-item[data-orientation="portrait"] {
+  aspect-ratio: 2 / 3;
+}
+
+[data-project-gallery] .gallery-item[data-orientation="auto"] {
+  aspect-ratio: 4 / 5;
+}
+
+[data-project-gallery] .gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 576px) {
+  [data-project-gallery] .gallery-item {
+    margin-bottom: 8px;
+  }
+}
+
 @media (max-width: 576px) {
   .img-small1 {
     margin-bottom: 8px;

@@ -54,36 +54,48 @@ html, body {
 
 /* Masonry column layout per immagini Action */
 .action-section .masonry {
-  column-count: 2;       /* due colonne */
-  column-gap: 24px;      /* distanza orizzontale */
   margin-bottom: 150px;
   overflow-x: hidden;
 }
 
-.action-section .masonry img {
+/* Ogni immagine ha un wrapper con aspect-ratio → altezza proporzionale alla colonna */
+.action-section .masonry .gallery-columns {
+  display: flex;
+  gap: 24px; /* distanza orizzontale */
+}
+
+.action-section .masonry .gallery-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* distanza verticale */
+}
+
+.action-section .masonry .gallery-item {
   width: 100%;
-  /* border-radius: 8px; radius card masonry */
+  overflow: hidden;
+}
+
+/* Landscape tipico: 2048x1365 ≈ 3:2 */
+.action-section .masonry .gallery-item[data-orientation="landscape"] {
+  aspect-ratio: 3 / 2;
+}
+
+/* Portrait tipico: 1365x2048 ≈ 2:3 */
+.action-section .masonry .gallery-item[data-orientation="portrait"] {
+  aspect-ratio: 2 / 3;
+}
+
+/* Prima del load: ratio neutro (riduce il layout shift) */
+.action-section .masonry .gallery-item[data-orientation="auto"] {
+  aspect-ratio: 4 / 5;
+}
+
+.action-section .masonry .gallery-item img {
+  width: 100%;
+  height: 100%;
   display: block;
-  margin-bottom: 24px;   /* distanza verticale */
   object-fit: cover;
-}
-
-.img-small {
-
-}
-
-.img-large {
-
-}
-
-
-/* Dimensioni desktop */
-.img-small {
-
-}
-
-.img-large {
-
 }
 
 
@@ -103,17 +115,16 @@ html, body {
   }
 
   .action-section .masonry {
-    column-count: 2;      /* mantieni due colonne */
-    column-gap: 8px;     /* gutter più stretto */
     margin-bottom: 80px;
     padding: 0 16px;      /* margine ai lati */
   }
 
-  .action-section .masonry img {
-    object-fit: cover;
-    margin-bottom: 8px; /* spaziatura coerente */
-    display: block;
-    width: 100%;
+  .action-section .masonry .gallery-columns {
+    gap: 8px;
+  }
+
+  .action-section .masonry .gallery-col {
+    gap: 8px;
   }
 }
 
@@ -135,17 +146,16 @@ html, body {
   }
 
   .action-section .masonry {
-    column-count: 2;      /* mantieni due colonne */
-    column-gap: 8px;     /* gutter più stretto */
     margin-bottom: 80px;
     padding: 0 16px;      /* margine ai lati */
   }
 
-  .action-section .masonry img {
-    object-fit: cover;
-    margin-bottom: 8px; /* spaziatura coerente */
-    display: block;
-    width: 100%;
+  .action-section .masonry .gallery-columns {
+    gap: 8px;
+  }
+
+  .action-section .masonry .gallery-col {
+    gap: 8px;
   }
 }
 
