@@ -17,7 +17,7 @@ async function renderGalleryFromJson() {
   const images = Array.isArray(data?.images) ? data.images : [];
   container.innerHTML = "";
 
-  // Due colonne reali: ordine per riga (sx, dx, sx, dx...)
+  // Due colonne reali con bilanciamento dinamico in base all'altezza
   const columns = document.createElement("div");
   columns.className = "gallery-columns";
   const colLeft = document.createElement("div");
@@ -27,6 +27,17 @@ async function renderGalleryFromJson() {
   columns.appendChild(colLeft);
   columns.appendChild(colRight);
   container.appendChild(columns);
+
+  // Altezza relativa per unità di larghezza colonna (deve combaciare con i ratio in CSS):
+  // landscape 3:2 → 2/3, portrait 2:3 → 3/2, auto 4:5 → 5/4
+  const HEIGHT_RATIO = {
+    landscape: 2 / 3,
+    portrait: 3 / 2,
+    auto: 5 / 4,
+  };
+
+  const cols = [colLeft, colRight];
+  const colHeights = [0, 0];
 
   images.forEach((item, idx) => {
     const wrapper = document.createElement("div");
@@ -62,8 +73,11 @@ async function renderGalleryFromJson() {
     );
 
     wrapper.appendChild(img);
-    const targetCol = idx % 2 === 0 ? colLeft : colRight;
-    targetCol.appendChild(wrapper);
+
+    // Masonry: scegli la colonna attualmente più corta (tie → sinistra)
+    const targetIdx = colHeights[0] <= colHeights[1] ? 0 : 1;
+    cols[targetIdx].appendChild(wrapper);
+    colHeights[targetIdx] += HEIGHT_RATIO[orientation] ?? HEIGHT_RATIO.auto;
   });
 
   document.dispatchEvent(new CustomEvent("gallery:rendered", { detail: { key } }));
