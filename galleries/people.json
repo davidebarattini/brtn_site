@@ -1,6 +1,6 @@
 {
   "title": "People",
-  "generatedAt": "2026-05-28T00:00:00.000Z",
+  "generatedAt": "2026-05-28T18:20:43.414Z",
   "images": [
     {
       "src": "img/People/01_People_12.jpg",
@@ -76,6 +76,11 @@
       "src": "img/People/19_People.jpg",
       "alt": "",
       "orientation": "portrait"
+    },
+    {
+      "src": "img/People/20_People.jpg",
+      "alt": "",
+      "orientation": "landscape"
     }
   ]
 }

@@ -466,6 +466,9 @@
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
+  text-wrap: pretty;
+  orphans: 2;
+  widows: 2;
 }
 
 /* Responsive per tablet */

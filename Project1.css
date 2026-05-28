@@ -265,6 +265,9 @@ html, body {
   margin-top: 0px;
   line-height: 1.6;
   margin-bottom: 64px;
+  text-wrap: pretty;
+  orphans: 2;
+  widows: 2;
 }
 .img-small{
     margin-bottom: 24px;
