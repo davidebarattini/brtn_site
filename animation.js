@@ -45,6 +45,7 @@ if (hero) {
     "img/Hero_image/hero_image10_low.jpg",
     "img/Hero_image/hero_image11_low.jpg",
     "img/Hero_image/hero_image6_low.jpg",
+    "img/Hero_image/DSC03793.jpg",
   ];
 
   let currentIndex = 0;

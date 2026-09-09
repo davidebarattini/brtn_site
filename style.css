@@ -82,6 +82,14 @@
   will-change: transform;
 }
 
+/* Pannello scuro extra solo per la nuova hero image (troppo chiara per il testo bianco) */
+.hero-image .hero-img-7::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
 @media (max-width: 576px) {
   .hero-image .hero-img-0 {
     background-position: -650px center !important; /* esempio */
