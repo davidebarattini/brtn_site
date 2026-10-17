@@ -290,7 +290,7 @@
   max-width: 528px;
   height: 543px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0;
 }
 @media (max-width: 991px) {
   .about-contact{
@@ -378,7 +378,7 @@
   max-width: 252px;
   height: 252px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0;
 }
 
 /* Gutter tra immagini: bootstrap già gestisce 24px, ma per sicurezza */

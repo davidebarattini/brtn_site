@@ -47,7 +47,6 @@ async function renderGalleryFromJson() {
     img.loading = "lazy";
     img.src = item.src;
     img.alt = item.alt || "";
-    img.className = "rounded-2";
     img.dataset.index = String(idx);
 
     const orientation = item.orientation || "auto";
