@@ -1,21 +1,81 @@
 {
   "title": "Action",
-  "generatedAt": "2026-10-18T23:48:13.559285Z",
+  "generatedAt": "2026-10-19T00:35:05.990Z",
   "images": [
     {
-      "src": "img/Action/01_Action1.jpg",
+      "src": "img/Action/01_Action.jpg",
       "alt": "",
       "orientation": "landscape"
     },
     {
-      "src": "img/Action/19_Action.jpg",
+      "src": "img/Action/02_Action.jpg",
       "alt": "",
       "orientation": "portrait"
     },
     {
-      "src": "img/Action/02_Action2.jpg",
+      "src": "img/Action/03_Action.jpg",
       "alt": "",
       "orientation": "portrait"
+    },
+    {
+      "src": "img/Action/04_Action.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Action/05_Action.jpg",
+      "alt": "",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Action/06_Action.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Action/07_Action.jpg",
+      "alt": "",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Action/08_Action.jpg",
+      "alt": "",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Action/09_Action.jpg",
+      "alt": "",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Action/10_Action.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Action/11_Action.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Action/12_Action.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Action/13_Action.jpg",
+      "alt": "",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Action/14_Action.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Action/15_Action.jpg",
+      "alt": "",
+      "orientation": "landscape"
     },
     {
       "src": "img/Action/16_Action.jpg",
@@ -23,17 +83,17 @@
       "orientation": "portrait"
     },
     {
-      "src": "img/Action/03_Action3.jpg",
+      "src": "img/Action/17_Action.jpg",
       "alt": "",
       "orientation": "landscape"
     },
     {
-      "src": "img/Action/04_Action7.jpg",
+      "src": "img/Action/18_Action.jpg",
       "alt": "",
-      "orientation": "portrait"
+      "orientation": "landscape"
     },
     {
-      "src": "img/Action/05_Action13.jpg",
+      "src": "img/Action/19_Action.jpg",
       "alt": "",
       "orientation": "landscape"
     },
@@ -43,72 +103,12 @@
       "orientation": "landscape"
     },
     {
-      "src": "img/Action/06_Action9.jpg",
-      "alt": "",
-      "orientation": "landscape"
-    },
-    {
-      "src": "img/Action/17_Action.jpg",
-      "alt": "",
-      "orientation": "portrait"
-    },
-    {
-      "src": "img/Action/07_Action11.jpg",
-      "alt": "",
-      "orientation": "portrait"
-    },
-    {
-      "src": "img/Action/08_Action6.jpg",
-      "alt": "",
-      "orientation": "portrait"
-    },
-    {
-      "src": "img/Action/09_Action14.jpg",
-      "alt": "",
-      "orientation": "landscape"
-    },
-    {
       "src": "img/Action/21_Action.jpg",
-      "alt": "",
-      "orientation": "portrait"
-    },
-    {
-      "src": "img/Action/10_Action15_.jpg",
-      "alt": "",
-      "orientation": "landscape"
-    },
-    {
-      "src": "img/Action/18_Action.jpg",
-      "alt": "",
-      "orientation": "portrait"
-    },
-    {
-      "src": "img/Action/11_Action15.jpg",
-      "alt": "",
-      "orientation": "landscape"
-    },
-    {
-      "src": "img/Action/12_Action16.jpg",
-      "alt": "",
-      "orientation": "landscape"
-    },
-    {
-      "src": "img/Action/13_Action17.jpg",
       "alt": "",
       "orientation": "landscape"
     },
     {
       "src": "img/Action/22_Action.jpg",
-      "alt": "",
-      "orientation": "landscape"
-    },
-    {
-      "src": "img/Action/14_stay_up.jpg",
-      "alt": "",
-      "orientation": "landscape"
-    },
-    {
-      "src": "img/Action/15_Action.jpg",
       "alt": "",
       "orientation": "landscape"
     }

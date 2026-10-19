@@ -1,86 +1,71 @@
 {
   "title": "People",
-  "generatedAt": "2026-05-28T18:20:43.414Z",
+  "generatedAt": "2026-10-19T00:35:06.004Z",
   "images": [
     {
-      "src": "img/People/01_People_12.jpg",
+      "src": "img/People/01_People.jpg",
       "alt": "",
       "orientation": "portrait"
     },
     {
-      "src": "img/People/02_People_13.jpg",
+      "src": "img/People/02_People.jpg",
       "alt": "",
       "orientation": "portrait"
     },
     {
-      "src": "img/People/DSC01296-2-Edit-Edit.jpg",
-      "alt": "",
-      "orientation": "landscape"
-    },
-    {
-      "src": "img/People/03_People_14.jpg",
+      "src": "img/People/03_People.jpg",
       "alt": "",
       "orientation": "landscape"
     },
     {
       "src": "img/People/04_People.jpg",
       "alt": "",
-      "orientation": "portrait"
+      "orientation": "landscape"
     },
     {
-      "src": "img/People/05_People_16.jpg",
+      "src": "img/People/05_People.jpg",
       "alt": "",
       "orientation": "portrait"
     },
     {
-      "src": "img/People/Jean05.jpg",
+      "src": "img/People/06_People.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/People/07_People.jpg",
       "alt": "",
       "orientation": "landscape"
     },
     {
-      "src": "img/People/06_People_17.jpg",
+      "src": "img/People/08_People.jpg",
       "alt": "",
       "orientation": "portrait"
     },
     {
-      "src": "img/People/07_People_18.jpg",
+      "src": "img/People/09_People.jpg",
       "alt": "",
       "orientation": "landscape"
     },
     {
-      "src": "img/People/DSC09679.jpg",
+      "src": "img/People/10_People.jpg",
       "alt": "",
       "orientation": "portrait"
     },
     {
-      "src": "img/People/08_People_20.jpg",
+      "src": "img/People/11_People.jpg",
       "alt": "",
       "orientation": "portrait"
     },
     {
-      "src": "img/People/09_People_22.jpg",
+      "src": "img/People/12_People.jpg",
       "alt": "",
       "orientation": "portrait"
     },
     {
-      "src": "img/People/010_People_21.jpg",
+      "src": "img/People/13_People.jpg",
       "alt": "",
       "orientation": "portrait"
-    },
-    {
-      "src": "img/People/DSC09700.jpg",
-      "alt": "",
-      "orientation": "portrait"
-    },
-    {
-      "src": "img/People/11_People_23.jpg",
-      "alt": "",
-      "orientation": "portrait"
-    },
-    {
-      "src": "img/People/13_People_15.jpg",
-      "alt": "",
-      "orientation": "landscape"
     },
     {
       "src": "img/People/14_People.jpg",
@@ -88,7 +73,22 @@
       "orientation": "portrait"
     },
     {
+      "src": "img/People/15_People.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/People/16_People.jpg",
+      "alt": "",
+      "orientation": "landscape"
+    },
+    {
       "src": "img/People/17_People.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/People/18_People.jpg",
       "alt": "",
       "orientation": "portrait"
     },

@@ -36,12 +36,58 @@ function compareFilenamesForGallery(a, b) {
   return a.localeCompare(b, "en", { numeric: true, sensitivity: "base" });
 }
 
-function inferOrientationFromFilename(filename) {
-  const base = filename.toLowerCase().replace(/\.[^.]+$/, "");
-  // Convenzione semplice: *_v / *-v / *.v => portrait, *_h / *-h / *.h => landscape
-  if (/(^|[_\-.])v$/.test(base)) return "portrait";
-  if (/(^|[_\-.])h$/.test(base)) return "landscape";
-  return "auto";
+/** La copertina del progetto sta nella stessa cartella ma non fa parte della galleria. */
+function isCover(filename) {
+  return /^copertina\b/i.test(path.basename(filename, path.extname(filename)));
+}
+
+/** Dimensioni reali da JPEG (marker SOF) e PNG (IHDR). Niente dipendenze esterne. */
+function readImageSize(buf) {
+  // PNG: firma + IHDR con width/height a offset 16 e 20
+  if (buf.length > 24 && buf.readUInt32BE(0) === 0x89504e47) {
+    return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };
+  }
+
+  // JPEG: scorre i segmenti fino al SOF, che contiene altezza e larghezza
+  if (buf.length > 4 && buf[0] === 0xff && buf[1] === 0xd8) {
+    let i = 2;
+    while (i + 9 < buf.length) {
+      if (buf[i] !== 0xff) {
+        i += 1;
+        continue;
+      }
+      const marker = buf[i + 1];
+      // SOF0-SOF3, SOF5-SOF7, SOF9-SOF11, SOF13-SOF15: tutti portano le dimensioni
+      const isSOF =
+        (marker >= 0xc0 && marker <= 0xc3) ||
+        (marker >= 0xc5 && marker <= 0xc7) ||
+        (marker >= 0xc9 && marker <= 0xcb) ||
+        (marker >= 0xcd && marker <= 0xcf);
+      if (isSOF) {
+        return { height: buf.readUInt16BE(i + 5), width: buf.readUInt16BE(i + 7) };
+      }
+      if (marker === 0xd8 || marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) {
+        i += 2;
+        continue;
+      }
+      i += 2 + buf.readUInt16BE(i + 2);
+    }
+  }
+
+  return null;
+}
+
+async function getOrientation(absPath) {
+  try {
+    // Il SOF può stare ben oltre i primi KB (EXIF e profili colore sono grossi),
+    // quindi si legge tutto il file: gira solo in fase di build.
+    const buf = await fs.readFile(absPath);
+    const size = readImageSize(buf);
+    if (!size || !size.width || !size.height) return "auto";
+    return size.width >= size.height ? "landscape" : "portrait";
+  } catch {
+    return "auto"; // il browser lo capisce dopo il load
+  }
 }
 
 async function listImages(relativeDir) {
@@ -53,17 +99,21 @@ async function listImages(relativeDir) {
     return [];
   }
 
-  return entries
+  const names = entries
     .filter((e) => e.isFile())
     .map((e) => e.name)
     .filter((name) => IMAGE_EXTS.has(path.extname(name).toLowerCase()))
     .filter((name) => !name.startsWith(".")) // ignora .DS_Store e simili
-    .sort(compareFilenamesForGallery)
-    .map((name) => ({
+    .filter((name) => !isCover(name)) // la copertina non va in galleria
+    .sort(compareFilenamesForGallery);
+
+  return Promise.all(
+    names.map(async (name) => ({
       src: `${relativeDir}/${name}`.replaceAll("\\", "/"),
       alt: "",
-      orientation: inferOrientationFromFilename(name),
-    }));
+      orientation: await getOrientation(path.join(absDir, name)),
+    }))
+  );
 }
 
 async function main() {
