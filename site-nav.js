@@ -68,19 +68,25 @@
       const closeBtn = document.querySelector(".mobile-menu .close-menu");
       if (!toggler || !mobileMenu || !closeBtn) return;
 
+      function setMenu(open) {
+        mobileMenu.classList.toggle("active", open);
+        toggler.classList.toggle("active", open);
+        // Blocca lo scroll della pagina mentre il menu copre tutto
+        document.body.classList.toggle("menu-open", open);
+        toggler.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+
       toggler.addEventListener("click", () => {
-        mobileMenu.classList.toggle("active");
-        toggler.classList.toggle("active");
+        setMenu(!mobileMenu.classList.contains("active"));
       });
-      closeBtn.addEventListener("click", () => {
-        mobileMenu.classList.remove("active");
-        toggler.classList.remove("active");
-      });
+      closeBtn.addEventListener("click", () => setMenu(false));
+
       mobileMenu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.remove("active");
-          toggler.classList.remove("active");
-        });
+        link.addEventListener("click", () => setMenu(false));
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") setMenu(false);
       });
     }
 

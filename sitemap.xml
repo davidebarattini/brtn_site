@@ -41,6 +41,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://brtnvisuals.com/Project4.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://brtnvisuals.com/Project6.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://brtnvisuals.com/Project7.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://brtnvisuals.com/privacy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

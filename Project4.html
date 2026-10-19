@@ -19,62 +19,55 @@
 <body class="gallery-page">
 
  <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+<nav class="navbar navbar-dark fixed-top custom-navbar">
   <div class="container container-custom">
     <a class="navbar-brand" href="index.html">
       <img src="img/logo_white.png" alt="Logo" height="40">
     </a>
 
     <!-- Bottone hamburger -->
-    <button class="navbar-toggler custom-toggler d-l-flex d-lg-none" type="button">
+    <button class="navbar-toggler custom-toggler ms-auto" type="button" aria-label="Apri il menu">
       <i class="bi bi-list"></i>
     </button>
 
-    <!-- Navbar desktop -->
-    <div class="collapse navbar-collapse justify-content-between d-none d-lg-flex" id="navbarContent">
-      <ul class="navbar-nav ms-auto nav-middle mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="index.html">Projects</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="portfolioDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">Portfolio</a>
-          <ul class="dropdown-menu" aria-labelledby="portfolioDropdown">
-            <li><a class="dropdown-item" href="action.html">Action</a></li>
-            <li><a class="dropdown-item" href="People.html">People</a></li>
-            <li><a class="dropdown-item" href="Places.html">Places</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
-      </ul>
-      <div class="d-flex align-items-center">
-        <a href="mailto:brtn.visuals@gmail.com" class="text-white me-3"><i class="bi bi-envelope-fill"></i></a>
-        <a href="https://www.instagram.com/brtn.visuals" target="_blank" class="text-white me-3"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/davide-barattini" target="_blank" class="text-white"><i class="bi bi-linkedin"></i></a>
-      </div>
-    </div>
   </div>
 </nav>
 
   <!-- mobile menu -->
 <div id="mobileMenu" class="mobile-menu">
-  <button class="close-menu"><i class="bi bi-x"></i></button>
-  <ul class="mobile-nav">
-    <li><a href="index.html">Projects</a></li>
-    <li class="has-submenu">
-      <a href="#">Portfolio</a>
-      <ul class="submenu">
-        <li><a href="action.html">Action</a></li>
-        <li><a href="People.html">People</a></li>
-        <li><a href="Places.html">Places</a></li>
-      </ul>
-    </li>
-    <li><a href="About.html">About</a></li>
-  </ul>
+  <div class="menu-head">
+    <a class="menu-logo" href="index.html">
+      <img src="img/logo_white.png" alt="Logo bianco di brtn.visuals" height="40">
+    </a>
+    <button class="close-menu" aria-label="Chiudi il menu"><i class="bi bi-x"></i></button>
+  </div>
 
-  <!-- Social icons mobile -->
-  <div class="mobile-social">
-    <a href="mailto:brtn.visuals@gmail.com"><i class="bi bi-envelope-fill"></i></a>
-    <a href="https://www.instagram.com/brtn.visuals" target="_blank"><i class="bi bi-instagram"></i></a>
-    <a href="https://www.linkedin.com/in/davide-barattini" target="_blank"><i class="bi bi-linkedin"></i></a>
+  <nav class="menu-body">
+    <ul class="mobile-nav">
+      <li><a href="index.html">Projects</a></li>
+      <li class="has-submenu">
+        <span class="menu-label">Portfolio</span>
+        <ul class="submenu">
+          <li><a href="action.html">Action</a></li>
+          <li><a href="People.html">People</a></li>
+          <li><a href="Places.html">Places</a></li>
+        </ul>
+      </li>
+      <li><a href="About.html">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="menu-foot">
+    <div class="menu-col">
+      <h4 class="menu-col-title">Contact</h4>
+      <a href="mailto:brtn.visuals@gmail.com">brtn.visuals@gmail.com</a>
+      <a href="tel:+393892809736">+39 389 2809736</a>
+    </div>
+    <div class="menu-col">
+      <h4 class="menu-col-title">Socials</h4>
+      <a href="https://www.instagram.com/brtn.visuals" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/in/davide-barattini" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </div>
 </div>
 
@@ -103,23 +96,11 @@
 </div>
 </div>
 
-<!-- Sezione immagini + info sotto il video -->
-<div class="container container-custom2">
-  <div class="row">
-    <!-- Colonna sinistra: immagini (prime 6 colonne) -->
-    <div class="col-12 col-lg-3 d-flex flex-column order-2 order-lg-1 masonry">
-      <div data-project-gallery="trofeo" data-offset="0" data-limit="2" data-base-class="img-fluid project-image" data-pattern="img-large,img-large"></div>
-    </div>
-    
-    <!-- Colonna destra immagini: altre due -->
-<div class="col-12 col-lg-3 d-flex flex-column order-2 order-lg-1 masonry">
-      <div data-project-gallery="trofeo" data-offset="2" data-limit="2" data-base-class="img-fluid project-image" data-pattern="img-large,img-large"></div>
-    </div>
-    
-
-
-    <!-- Colonna destra: testo (altre 6 colonne) -->
-    <div class=" testo col-12 col-lg-6 d-flex align-items-start justify-content-end order-1 order-lg-2">
+<!-- Griglia immagini: colonne bilanciate, le info stanno in alto a destra
+     e le ultime due colonne partono sotto di esse -->
+<section class="project-gallery-section">
+  <div class="container container-custom">
+    <div class="project-grid masonry" data-project-gallery="trofeo">
       <div class="project-info text-end">
         <p><strong>Date:</strong> 25–26 October 2025</p>
         <p><strong>Location:</strong> Como, Italy</p>
@@ -128,12 +109,7 @@
       </div>
     </div>
   </div>
-
-</div>
-  <!-- Sezione immagini (Masonry) -->
-  <section class="action-section">
-    <div class="container container-custom masonry" id="action-mansory" data-project-gallery="trofeo" data-offset="4" data-base-class="" data-pattern="img-small1,img-large1,img-large1,img-large1,img-large1,img-small1"></div>
-  </section>
+</section>
 
 
 

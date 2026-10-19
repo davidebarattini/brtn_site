@@ -9,6 +9,8 @@ const GALLERIES = [
   { key: "places", title: "Places", dir: "img/Places" },
   { key: "morzine", title: "Morzine", dir: "img/Morzine" },
   { key: "madesimo", title: "Madesimo", dir: "img/Madesimo" },
+  { key: "ironman_cervia", title: "Ironman 70.3 - Cervia", dir: "img/Ironman_Cervia" },
+  { key: "wrc_sardegna", title: "WRC Alghero - Sardinia", dir: "img/WRC_Sardegna" },
   { key: "quater", title: "Quater", dir: "img/Quater" },
 ];
 

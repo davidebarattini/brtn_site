@@ -1,6 +1,6 @@
 {
   "title": "Action",
-  "generatedAt": "2026-05-28T18:20:44.988Z",
+  "generatedAt": "2026-10-18T23:48:13.559285Z",
   "images": [
     {
       "src": "img/Action/01_Action1.jpg",
@@ -8,12 +8,17 @@
       "orientation": "landscape"
     },
     {
+      "src": "img/Action/19_Action.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
       "src": "img/Action/02_Action2.jpg",
       "alt": "",
       "orientation": "portrait"
     },
     {
-      "src": "img/Action/DSC07215-3.jpg",
+      "src": "img/Action/16_Action.jpg",
       "alt": "",
       "orientation": "portrait"
     },
@@ -33,12 +38,17 @@
       "orientation": "landscape"
     },
     {
+      "src": "img/Action/20_Action.jpg",
+      "alt": "",
+      "orientation": "landscape"
+    },
+    {
       "src": "img/Action/06_Action9.jpg",
       "alt": "",
       "orientation": "landscape"
     },
     {
-      "src": "img/Action/DSC07441-3.jpg",
+      "src": "img/Action/17_Action.jpg",
       "alt": "",
       "orientation": "portrait"
     },
@@ -58,12 +68,17 @@
       "orientation": "landscape"
     },
     {
+      "src": "img/Action/21_Action.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
       "src": "img/Action/10_Action15_.jpg",
       "alt": "",
       "orientation": "landscape"
     },
     {
-      "src": "img/Action/DSC07479.jpg",
+      "src": "img/Action/18_Action.jpg",
       "alt": "",
       "orientation": "portrait"
     },
@@ -79,6 +94,11 @@
     },
     {
       "src": "img/Action/13_Action17.jpg",
+      "alt": "",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Action/22_Action.jpg",
       "alt": "",
       "orientation": "landscape"
     },

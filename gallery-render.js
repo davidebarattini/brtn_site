@@ -1,43 +1,34 @@
-async function renderGalleryFromJson() {
-  const container = document.querySelector(".masonry[data-gallery]");
-  if (!container) return;
+// Numero di colonne: 3 da desktop in giù a 2 su tablet/mobile
+// (combacia con i breakpoint delle media query nei CSS delle gallerie)
+function getColumnCount() {
+  return window.matchMedia("(max-width: 992px)").matches ? 2 : 3;
+}
 
-  const key = container.getAttribute("data-gallery");
-  if (!key) return;
+// Altezza relativa per unità di larghezza colonna (deve combaciare con i ratio in CSS):
+// landscape 3:2 → 2/3, portrait 2:3 → 3/2, auto 4:5 → 5/4
+const HEIGHT_RATIO = {
+  landscape: 2 / 3,
+  portrait: 3 / 2,
+  auto: 5 / 4,
+};
 
-  let data;
-  try {
-    const res = await fetch(`galleries/${encodeURIComponent(key)}.json`, { cache: "no-store" });
-    if (!res.ok) return;
-    data = await res.json();
-  } catch {
-    return;
-  }
-
-  const images = Array.isArray(data?.images) ? data.images : [];
+function buildGallery(container, images, columnCount) {
   container.innerHTML = "";
 
-  // Due colonne reali con bilanciamento dinamico in base all'altezza
+  // Colonne reali con bilanciamento dinamico in base all'altezza
   const columns = document.createElement("div");
   columns.className = "gallery-columns";
-  const colLeft = document.createElement("div");
-  colLeft.className = "gallery-col";
-  const colRight = document.createElement("div");
-  colRight.className = "gallery-col";
-  columns.appendChild(colLeft);
-  columns.appendChild(colRight);
+
+  const cols = [];
+  const colHeights = [];
+  for (let i = 0; i < columnCount; i += 1) {
+    const col = document.createElement("div");
+    col.className = "gallery-col";
+    columns.appendChild(col);
+    cols.push(col);
+    colHeights.push(0);
+  }
   container.appendChild(columns);
-
-  // Altezza relativa per unità di larghezza colonna (deve combaciare con i ratio in CSS):
-  // landscape 3:2 → 2/3, portrait 2:3 → 3/2, auto 4:5 → 5/4
-  const HEIGHT_RATIO = {
-    landscape: 2 / 3,
-    portrait: 3 / 2,
-    auto: 5 / 4,
-  };
-
-  const cols = [colLeft, colRight];
-  const colHeights = [0, 0];
 
   images.forEach((item, idx) => {
     const wrapper = document.createElement("div");
@@ -73,16 +64,52 @@ async function renderGalleryFromJson() {
 
     wrapper.appendChild(img);
 
-    // Masonry: scegli la colonna attualmente più corta (tie → sinistra)
-    const targetIdx = colHeights[0] <= colHeights[1] ? 0 : 1;
+    // Masonry: scegli la colonna attualmente più corta (tie → la più a sinistra)
+    let targetIdx = 0;
+    for (let i = 1; i < colHeights.length; i += 1) {
+      if (colHeights[i] < colHeights[targetIdx]) targetIdx = i;
+    }
     cols[targetIdx].appendChild(wrapper);
     colHeights[targetIdx] += HEIGHT_RATIO[orientation] ?? HEIGHT_RATIO.auto;
   });
+}
 
+async function renderGalleryFromJson() {
+  const container = document.querySelector(".masonry[data-gallery]");
+  if (!container) return;
+
+  const key = container.getAttribute("data-gallery");
+  if (!key) return;
+
+  let data;
+  try {
+    const res = await fetch(`galleries/${encodeURIComponent(key)}.json`, { cache: "no-store" });
+    if (!res.ok) return;
+    data = await res.json();
+  } catch {
+    return;
+  }
+
+  const images = Array.isArray(data?.images) ? data.images : [];
+
+  let columnCount = getColumnCount();
+  buildGallery(container, images, columnCount);
   document.dispatchEvent(new CustomEvent("gallery:rendered", { detail: { key } }));
+
+  // Ricostruisci solo quando cambia davvero il numero di colonne
+  let resizeTimer = null;
+  window.addEventListener("resize", () => {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(() => {
+      const next = getColumnCount();
+      if (next === columnCount) return;
+      columnCount = next;
+      buildGallery(container, images, columnCount);
+      document.dispatchEvent(new CustomEvent("gallery:rendered", { detail: { key } }));
+    }, 150);
+  });
 }
 
 window.addEventListener("DOMContentLoaded", () => {
   renderGalleryFromJson();
 });
-

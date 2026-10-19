@@ -11,15 +11,15 @@ html, body {
 
 /* Container personalizzato (distanze responsive) */
 .container-custom2 {
-  padding-left: 86px;
-  padding-right: 86px;
+  padding-left: 40px;
+  padding-right: 40px;
   margin-top: 24px;
 }
 
 @media (max-width: 992px) {
   .container-custom2 {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 
@@ -32,14 +32,22 @@ html, body {
 
 
 .container-custom {
-  padding-left: 86px;
-  padding-right: 86px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* Desktop: il contenitore usa tutta la larghezza, cosi il margine laterale resta quello del padding */
+@media (min-width: 993px) {
+  .container-custom2,
+  .container-custom {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 992px) {
   .container-custom {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 
@@ -125,100 +133,265 @@ html, body {
   justify-content: center;
   cursor: pointer;
   z-index: 1100;
+  transition: opacity 0.25s ease;
 }
 
-/* Hamburger X animation */
-.custom-toggler.active span {
-  transform: rotate(45deg);
-}
-.custom-toggler.active span::before {
-  transform: rotate(90deg) translateX(0);
-}
-.custom-toggler.active span::after {
+/* A menu aperto resta solo la X dentro l'overlay */
+.custom-toggler.active {
   opacity: 0;
+  pointer-events: none;
+}
+
+/* Blocca lo scroll della pagina sotto al menu */
+body.menu-open {
+  overflow: hidden;
 }
 
 
 
 
-/* Overlay Mobile Menu -----------*/
+/* Overlay menu a tutta pagina -----------*/
 .mobile-menu {
   position: fixed;
   top: 0;
   right: -100%;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.95);
+  background-color: #111;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  gap: 24px;
+  justify-content: space-between;
+  padding: 24px 40px 48px;
   z-index: 1050;
-  transition: right 0.4s ease;
+  overflow-y: auto;
+  transition: right 0.45s ease;
 }
 
 .mobile-menu.active {
   right: 0;
 }
 
-/* Close button */
+/* Testata: logo a sinistra, chiusura a destra */
+.menu-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-logo img {
+  height: 40px;
+}
+
 .mobile-menu .close-menu {
-  position: absolute;
-  top: 24px;
-  right: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.25rem 0.75rem; /* Match hamburger padding */
-  font-size: 2.5rem; /* Increased size for better visibility */
+  padding: 0;
+  font-size: 2.5rem;
   color: #fff;
   background: none;
   border: none;
   cursor: pointer;
-  line-height: 1; /* Match bootstrap's .navbar-toggler */
+  line-height: 1;
 }
 
+/* Voci Menu ---------------- */
+.menu-body {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 48px 0;
+}
 
-
-/* Voci Menu Mobile ---------------- */
 .mobile-menu ul.mobile-nav {
   list-style: none;
   padding: 0;
   margin: 0;
-  text-align: center;
+  text-align: left;
 }
 
-.mobile-menu ul.mobile-nav li {
-  margin-bottom: 48px;
+.mobile-menu ul.mobile-nav > li {
+  margin-bottom: 40px;
 }
 
-.mobile-menu ul.mobile-nav li a {
+.mobile-menu ul.mobile-nav > li:last-child {
+  margin-bottom: 0;
+}
+
+.mobile-menu ul.mobile-nav a,
+.mobile-menu .menu-label {
+  display: inline-block;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
   text-decoration: none;
+  transition: opacity 0.25s ease;
 }
 
-/* Sottomenù */
+/* Hover: una linea sottile che cresce da sinistra a destra.
+   Solo sulle parole cliccabili, quindi non su Portfolio che e' un'etichetta. */
+.mobile-menu ul.mobile-nav a,
+.mobile-menu .menu-col a {
+  position: relative;
+}
+
+.mobile-menu ul.mobile-nav a::after,
+.mobile-menu .menu-col a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.08em;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.35s ease;
+}
+
+.mobile-menu ul.mobile-nav a:hover::after,
+.mobile-menu .menu-col a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Nei contatti il testo e' piccolo: linea piu' fine e piu' vicina */
+.mobile-menu .menu-col a {
+  align-self: flex-start; /* la linea segue la parola, non la colonna */
+}
+
+.mobile-menu .menu-col a::after {
+  height: 1px;
+  bottom: -2px;
+}
+
+/* Sottomenù Portfolio: stesso bianco e stesso allineamento delle voci
+   principali, si distinguono solo per peso e dimensione del font */
 .mobile-menu ul.submenu {
   list-style: none;
   padding: 0;
-  margin-top: 24px;
+  margin: 16px 0 0;
 }
 
 .mobile-menu ul.submenu li {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+}
+
+.mobile-menu ul.submenu li:last-child {
+  margin-bottom: 0;
 }
 
 .mobile-menu ul.submenu li a {
-  font-size: 1.1rem;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #fff;
 }
 
-.mobile-social a {
-  color: #fff;       /* forza bianco */
-  font-size: 1rem;
+/* Contatti e social in basso a destra */
+.menu-foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 80px;
+}
+
+.menu-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-col-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 4px;
+}
+
+.menu-col a {
+  font-size: 14px;
+  color: #c9c9c9;
   text-decoration: none;
-  padding: 0 8px;
+  transition: color 0.25s ease;
+}
+
+.menu-col a:hover {
+  color: #fff;
+}
+
+/* Dissolvenza in sequenza all'apertura */
+.mobile-menu .menu-head,
+.mobile-menu ul.mobile-nav > li,
+.mobile-menu .menu-col {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.mobile-menu.active .menu-head,
+.mobile-menu.active ul.mobile-nav > li,
+.mobile-menu.active .menu-col {
+  opacity: 1;
+  transform: none;
+}
+
+.mobile-menu.active .menu-head { transition-delay: 0.10s; }
+.mobile-menu.active ul.mobile-nav > li:nth-child(1) { transition-delay: 0.20s; }
+.mobile-menu.active ul.mobile-nav > li:nth-child(2) { transition-delay: 0.28s; }
+.mobile-menu.active ul.mobile-nav > li:nth-child(3) { transition-delay: 0.36s; }
+.mobile-menu.active .menu-col:nth-child(1) { transition-delay: 0.44s; }
+.mobile-menu.active .menu-col:nth-child(2) { transition-delay: 0.50s; }
+
+/* Tablet */
+@media (max-width: 992px) {
+  .mobile-menu {
+    padding: 24px 32px 40px;
+  }
+
+  .mobile-menu ul.mobile-nav a,
+  .mobile-menu .menu-label {
+    font-size: 2.5rem;
+  }
+
+  .mobile-menu ul.submenu li a {
+    font-size: 1.5rem;
+  }
+
+  .menu-foot {
+    gap: 56px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .mobile-menu {
+    padding: 16px 16px 32px;
+  }
+
+  .menu-logo img {
+    height: 32px;
+  }
+
+  .menu-body {
+    padding: 32px 0;
+  }
+
+  .mobile-menu ul.mobile-nav > li {
+    margin-bottom: 28px;
+  }
+
+  .mobile-menu ul.mobile-nav a,
+  .mobile-menu .menu-label {
+    font-size: 2rem;
+  }
+
+  .mobile-menu ul.submenu li a {
+    font-size: 1.25rem;
+  }
+
+  .menu-foot {
+    justify-content: flex-start;
+    gap: 40px;
+  }
 }
 
 
@@ -288,36 +461,86 @@ html, body {
     margin-bottom: 24px;
 }
 
-/* Gallerie generate: rapporto fisso (come Action/People/Places) */
-[data-project-gallery] .gallery-item {
-  width: 100%;
-  overflow: hidden;
-  break-inside: avoid;
-  margin-bottom: 24px;
+/* Griglia progetto: colonne bilanciate come in Action/People/Places,
+   ogni foto tiene il suo formato reale.
+   Il blocco info sta in alto a destra e le ultime due colonne partono
+   sotto di esso (il distacco lo calcola project-gallery-render.js). */
+.project-grid {
+  position: relative;
+  margin-top: 24px;
+  margin-bottom: 150px;
 }
 
-[data-project-gallery] .gallery-item[data-orientation="landscape"] {
+.project-grid > .project-info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(50% - 6px); /* esattamente le due colonne di destra */
+}
+
+.project-grid .gallery-columns {
+  display: flex;
+  gap: 12px; /* distanza orizzontale */
+}
+
+.project-grid .gallery-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* distanza verticale */
+}
+
+.project-grid .gallery-item {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Formato reale della foto (stessi ratio delle gallerie) */
+.project-grid .gallery-item[data-orientation="landscape"] {
   aspect-ratio: 3 / 2;
 }
 
-[data-project-gallery] .gallery-item[data-orientation="portrait"] {
+.project-grid .gallery-item[data-orientation="portrait"] {
   aspect-ratio: 2 / 3;
 }
 
-[data-project-gallery] .gallery-item[data-orientation="auto"] {
+/* Prima del load: ratio neutro (riduce il layout shift) */
+.project-grid .gallery-item[data-orientation="auto"] {
   aspect-ratio: 4 / 5;
 }
 
-[data-project-gallery] .gallery-item img {
+.project-grid .gallery-item img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
 }
 
-@media (max-width: 576px) {
-  [data-project-gallery] .gallery-item {
-    margin-bottom: 8px;
+/* Progetto senza galleria (solo video): restano le info a destra */
+.project-info-only {
+  margin-top: 24px;
+  margin-bottom: 150px;
+}
+
+/* Tablet e mobile: due colonne, info a tutta larghezza sopra la griglia */
+@media (max-width: 992px) {
+  .project-grid {
+    margin-bottom: 80px;
+  }
+
+  .project-grid > .project-info {
+    position: static;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .project-grid .gallery-columns,
+  .project-grid .gallery-col {
+    gap: 8px;
+  }
+
+  .project-info-only {
+    margin-bottom: 80px;
   }
 }
 
@@ -386,34 +609,6 @@ html, body {
 
 
 
-.action-section .masonry {
-  column-count: 4;       /* due colonne */
-  column-gap: 24px;      /* distanza orizzontale */
-  margin-bottom: 150px;
-  overflow-x: hidden;
-}
-
-@media (max-width: 576px) {
-.action-section .masonry {
-  column-count: 2;
-  column-gap: 8px;       /* due colonne */
-}
-}
-
-.action-section .masonry img {
-  width: 100%;
-  /* border-radius: 8px; radius card masonry */
-  display: block;
-  margin-bottom: 24px;   /* distanza verticale */
-  object-fit: cover;
-}
-
-@media (max-width: 576px) {
-.action-section .masonry img {
-  column-gap: 8px;
-  margin-bottom: 8px;      /* due colonne */
-}
-}
 
 @media (max-width: 576px) {
 .project-info p {
