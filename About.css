@@ -994,3 +994,70 @@ footer {
     margin-top: 2.25rem;
   }
 }
+
+/* ---------------- About: animazioni di entrata al caricamento ---------------- */
+/* Solo nella pagina About (About.css è condiviso con privacy e cookie).
+   fill-mode "backwards": durante il ritardo l'elemento resta nascosto,
+   a fine animazione torna ai suoi stili normali (hover compresi). */
+@keyframes about-fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes about-img-reveal {
+  from {
+    clip-path: inset(100% 0 0 0);
+    transform: scale(1.08);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    transform: scale(1);
+  }
+}
+
+.about-page .page-title,
+.about-page .page-title2,
+.about-page .about-text-col > p,
+.about-page .stay-up-to-date .row > div,
+.about-page .btn-follow-instagram {
+  animation: about-fade-up 1.1s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+.about-page .about-img {
+  animation: about-img-reveal 1.5s cubic-bezier(0.76, 0, 0.24, 1) 0.3s backwards;
+}
+
+/* Sequenza: titolo → testo → immagine → contatti → Stay up to date */
+.about-page .page-title { animation-delay: 0.1s; }
+.about-page .about-text-col > p:nth-child(1) { animation-delay: 0.25s; }
+.about-page .about-text-col > p:nth-child(2) { animation-delay: 0.35s; }
+.about-page .about-text-col > p:nth-child(3) { animation-delay: 0.45s; }
+
+.about-page .about-contact .about-text-col > p:nth-child(1) { animation-delay: 0.6s; }
+.about-page .about-contact .about-text-col > p:nth-child(2) { animation-delay: 0.67s; }
+.about-page .about-contact .about-text-col > p:nth-child(3) { animation-delay: 0.74s; }
+.about-page .about-contact .about-text-col > p:nth-child(4) { animation-delay: 0.81s; }
+
+.about-page .page-title2 { animation-delay: 0.9s; }
+.about-page .stay-up-to-date .row > div:nth-child(1) { animation-delay: 1s; }
+.about-page .stay-up-to-date .row > div:nth-child(2) { animation-delay: 1.08s; }
+.about-page .stay-up-to-date .row > div:nth-child(3) { animation-delay: 1.16s; }
+.about-page .stay-up-to-date .row > div:nth-child(4) { animation-delay: 1.24s; }
+.about-page .btn-follow-instagram { animation-delay: 1.35s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page .page-title,
+  .about-page .page-title2,
+  .about-page .about-text-col > p,
+  .about-page .about-img,
+  .about-page .stay-up-to-date .row > div,
+  .about-page .btn-follow-instagram {
+    animation: none;
+  }
+}
