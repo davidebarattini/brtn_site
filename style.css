@@ -819,6 +819,7 @@ body.menu-open {
 /* Responsive tablet */
 @media (max-width: 992px) {
   .category-img1 {
+    aspect-ratio: auto; /* con altezza fissa la larghezza deve restare piena */
     height: 200px;
   }
 }
@@ -826,6 +827,7 @@ body.menu-open {
 /* Responsive mobile */
 @media (max-width: 576px) {
   .category-img1 {
+    aspect-ratio: auto; /* con altezza fissa la larghezza deve restare piena */
     height: 94px;
   }
 }
@@ -833,6 +835,7 @@ body.menu-open {
 /* Responsive tablet */
 @media (max-width: 992px) {
   .category-img2 {
+    aspect-ratio: auto; /* con altezza fissa la larghezza deve restare piena */
     height: 200px;
   }
 }
@@ -840,6 +843,7 @@ body.menu-open {
 /* Responsive mobile */
 @media (max-width: 576px) {
   .category-img2 {
+    aspect-ratio: auto; /* con altezza fissa la larghezza deve restare piena */
     height: 94px;
   }
 }
@@ -847,6 +851,7 @@ body.menu-open {
 /* Responsive tablet */
 @media (max-width: 992px) {
   .category-img3 {
+    aspect-ratio: auto; /* con altezza fissa la larghezza deve restare piena */
     height: 200px;
   }
 }
@@ -854,6 +859,7 @@ body.menu-open {
 /* Responsive mobile */
 @media (max-width: 576px) {
   .category-img3 {
+    aspect-ratio: auto; /* con altezza fissa la larghezza deve restare piena */
     height: 94px;
   }
 }

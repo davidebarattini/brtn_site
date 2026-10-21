@@ -1010,14 +1010,15 @@ footer {
   }
 }
 
-@keyframes about-img-reveal {
+/* Solo opacity e transform: animati dalla GPU, non bloccano lo scroll su mobile */
+@keyframes about-img-in {
   from {
-    clip-path: inset(100% 0 0 0);
-    transform: scale(1.08);
+    opacity: 0;
+    transform: translate3d(0, 24px, 0) scale(0.97);
   }
   to {
-    clip-path: inset(0 0 0 0);
-    transform: scale(1);
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
@@ -1030,7 +1031,7 @@ footer {
 }
 
 .about-page .about-img {
-  animation: about-img-reveal 1.5s cubic-bezier(0.76, 0, 0.24, 1) 0.3s backwards;
+  animation: about-img-in 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.3s backwards;
 }
 
 /* Sequenza: titolo → testo → immagine → contatti → Stay up to date */
