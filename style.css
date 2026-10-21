@@ -29,6 +29,7 @@
     padding-left: 16px;
     padding-right: 16px;
     overflow-x: hidden;
+    overflow-x: clip; /* taglia solo in orizzontale: "hidden" crea un contenitore di scroll che taglia anche in verticale le animazioni di entrata */
   }
 }
 
@@ -1121,6 +1122,7 @@ footer {
   footer, .footer-top, .footer-bottom, .footer-sections, .footer-social {
     max-width: 100%;
     overflow-x: hidden;
+    overflow-x: clip; /* taglia solo in orizzontale: "hidden" crea un contenitore di scroll che taglia anche in verticale le animazioni di entrata */
   }
 }
 
