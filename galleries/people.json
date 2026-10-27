@@ -1,6 +1,6 @@
 {
   "title": "People",
-  "generatedAt": "2026-10-19T00:35:06.004Z",
+  "generatedAt": "2026-10-27T23:32:46.272Z",
   "images": [
     {
       "src": "img/People/01_People.jpg",
@@ -80,12 +80,12 @@
     {
       "src": "img/People/16_People.jpg",
       "alt": "",
-      "orientation": "landscape"
+      "orientation": "portrait"
     },
     {
       "src": "img/People/17_People.jpg",
       "alt": "",
-      "orientation": "portrait"
+      "orientation": "landscape"
     },
     {
       "src": "img/People/18_People.jpg",
@@ -100,7 +100,22 @@
     {
       "src": "img/People/20_People.jpg",
       "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/People/21_People.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/People/22_People.jpg",
+      "alt": "",
       "orientation": "landscape"
+    },
+    {
+      "src": "img/People/23_People.jpg",
+      "alt": "",
+      "orientation": "portrait"
     }
   ]
 }

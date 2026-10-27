@@ -17,7 +17,56 @@ function isCompact() {
 }
 
 function getColumnCount() {
+  // Mobile: una sola colonna
+  if (window.matchMedia("(max-width: 576px)").matches) return 1;
   return isCompact() ? 2 : 4;
+}
+
+// Generatore pseudo-casuale con seme: l'ordine mescolato resta lo stesso a ogni visita
+function seededRandom(seedText) {
+  let seed = 0;
+  for (const ch of seedText) seed = (seed * 31 + ch.charCodeAt(0)) | 0;
+  return () => {
+    seed = (seed + 0x6d2b79f5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function shuffle(list, random) {
+  const out = list.slice();
+  for (let i = out.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
+// Ordine per la colonna singola su mobile (attivo con data-mobile-mix): foto
+// mescolate, mai due verticali di seguito. Ogni verticale va in uno spazio
+// diverso tra le orizzontali, quindi si alternano o restano due orizzontali e
+// una verticale. Se le verticali sono troppe per evitarlo, l'ordine non cambia.
+function mixForMobile(images, seedText) {
+  const random = seededRandom(seedText);
+  const portraits = shuffle(images.filter((img) => img.orientation === "portrait"), random);
+  const others = shuffle(images.filter((img) => img.orientation !== "portrait"), random);
+  if (portraits.length > others.length + 1) return images;
+
+  // Spazi disponibili: prima, tra e dopo le orizzontali
+  const slots = shuffle(
+    Array.from({ length: others.length + 1 }, (_, i) => i),
+    random
+  ).slice(0, portraits.length);
+  const withPortrait = new Set(slots);
+
+  const out = [];
+  let p = 0;
+  for (let i = 0; i <= others.length; i += 1) {
+    if (withPortrait.has(i)) out.push(portraits[p++]);
+    if (i < others.length) out.push(others[i]);
+  }
+  return out;
 }
 
 async function loadGallery(key) {
@@ -93,7 +142,12 @@ function buildGallery(container, images) {
     }
   }
 
-  images.forEach((item, idx) => {
+  const ordered =
+    columnCount === 1 && container.hasAttribute("data-mobile-mix")
+      ? mixForMobile(images, container.getAttribute("data-project-gallery") || "")
+      : images;
+
+  ordered.forEach((item, idx) => {
     const wrapper = createItem(item, idx);
 
     // Masonry: scegli la colonna attualmente più corta (tie → la più a sinistra)
