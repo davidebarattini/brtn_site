@@ -95,6 +95,32 @@ html, body {
   }
 }
 
+/* Descrizione sotto il titolo: stesso testo e stessa distanza dell'About
+   (14px, interlinea 1.8; 32px tra titolo e testo). La galleria resta alla
+   distanza che prima aveva dal titolo. */
+.page-title.has-intro {
+  margin-bottom: 32px;
+}
+
+.page-intro {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+  margin: 0 0 56px;
+}
+
+@media (max-width: 992px) {
+  .page-intro {
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-intro {
+    margin-bottom: 40px;
+  }
+}
+
 /* Masonry column layout per immagini Action */
 .action-section .masonry {
   margin-bottom: 150px;

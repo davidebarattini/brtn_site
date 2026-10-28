@@ -1181,3 +1181,45 @@ footer {
   opacity: 0.5;
   pointer-events: none;
 }
+
+
+/* ---------------- Pagina 404 ---------------- */
+/* Sfondo bianco: navbar scura come nelle pagine interne */
+.notfound-page .custom-navbar {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.notfound {
+  padding-top: 168px;
+}
+
+.notfound-code {
+  font-size: clamp(96px, 16vw, 200px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin: 0 0 24px;
+}
+
+.notfound-title {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.notfound-text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 576px) {
+  .notfound {
+    padding-top: 116px;
+  }
+
+  .notfound-title {
+    font-size: 28px;
+  }
+}

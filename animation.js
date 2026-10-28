@@ -50,23 +50,44 @@ if (hero) {
 
   let currentIndex = 0;
 
-  function createHeroImageDiv(src) {
+  // Lo sfondo non viene messo subito: ogni slide si scarica solo quando serve
+  // (vedi loadSlide), così la home non scarica tutte le foto dell'hero insieme
+  function createHeroImageDiv() {
     const div = document.createElement("div");
     div.classList.add("hero-slide-layer");
     div.style.cssText =
       "background-size:cover;background-position:center;position:absolute;top:0;left:0;width:100%;height:100%;transition:opacity 1s ease;opacity:0;transform:translate3d(0,0,0) scale(1)";
-    div.style.backgroundImage = `url(${src})`;
     return div;
   }
 
   const heroDivs = images.map((src, index) => {
-    const div = createHeroImageDiv(src);
+    const div = createHeroImageDiv();
     div.classList.add(`hero-img-${index}`);
     heroImagesContainer.appendChild(div);
     return div;
   });
 
+  // Scarica la foto della slide e la mette come sfondo solo a download finito
+  // (niente immagini a metà). Una sola richiesta per slide.
+  const slideLoads = [];
+  const slideReady = images.map(() => false);
+  function loadSlide(index) {
+    if (!slideLoads[index]) {
+      slideLoads[index] = new Promise((resolve) => {
+        const img = new Image();
+        img.onload = img.onerror = () => {
+          heroDivs[index].style.backgroundImage = `url(${images[index]})`;
+          slideReady[index] = true;
+          resolve();
+        };
+        img.src = images[index];
+      });
+    }
+    return slideLoads[index];
+  }
+
   heroDivs[currentIndex].style.opacity = "1";
+  const firstSlideLoaded = loadSlide(currentIndex);
 
   function startImageSlider() {
     let scale = 1;
@@ -92,9 +113,17 @@ if (hero) {
 
     requestAnimationFrame(animateZoom);
 
+    // La prossima slide si scarica mentre si guarda quella attuale
+    loadSlide((currentIndex + 1) % images.length);
+
     sliderIntervalId = window.setInterval(() => {
+      const nextIndex = (currentIndex + 1) % images.length;
+      // Connessione lenta: se la prossima foto non è pronta resta quella attuale
+      if (!slideReady[nextIndex]) return;
+
       const prevIndex = currentIndex;
-      currentIndex = (currentIndex + 1) % images.length;
+      currentIndex = nextIndex;
+      loadSlide((currentIndex + 1) % images.length);
 
       scale = 1;
       heroDivs[currentIndex].style.opacity = "1";
@@ -111,7 +140,12 @@ if (hero) {
   });
 
   // ---------------- Splash screen ----------------
-  window.addEventListener("load", () => {
+  // Parte subito (lo script è in fondo al body, il DOM è pronto) e si chiude
+  // appena è pronta la prima foto dell'hero: non aspetta più tutte le immagini
+  // della pagina. Su connessioni lente si chiude comunque dopo SPLASH_MAX_MS.
+  const SPLASH_MAX_MS = 2500;
+
+  (function runSplash() {
     const splash = document.getElementById("splash-screen");
 
     if (!splash) {
@@ -119,7 +153,14 @@ if (hero) {
       return;
     }
 
-    if (sessionStorage.getItem("splashShown")) {
+    let alreadyShown = false;
+    try {
+      alreadyShown = sessionStorage.getItem("splashShown") === "true";
+    } catch {
+      alreadyShown = false;
+    }
+
+    if (alreadyShown) {
       splash.style.display = "none";
       startImageSlider();
       return;
@@ -127,43 +168,25 @@ if (hero) {
 
     splash.style.display = "flex";
 
-    const domImages = Array.from(document.querySelectorAll("img"));
-    const allImageUrls = [
-      ...domImages.map((img) => img.src),
-      ...images.map((url) => new URL(url, window.location.href).href),
-    ];
-
-    const totalImages = allImageUrls.length;
-    let loadedImages = 0;
-
+    let hidden = false;
     function hideSplash() {
+      if (hidden) return;
+      hidden = true;
       splash.style.opacity = "0";
       setTimeout(() => {
         splash.remove();
-        sessionStorage.setItem("splashShown", "true");
+        try {
+          sessionStorage.setItem("splashShown", "true");
+        } catch {
+          // Navigazione privata: lo splash ricomparirà, nessun problema
+        }
         startImageSlider();
       }, 650);
     }
 
-    if (totalImages === 0) {
-      hideSplash();
-      return;
-    }
-
-    function imageLoaded() {
-      loadedImages++;
-      if (loadedImages === totalImages) {
-        setTimeout(hideSplash, 300);
-      }
-    }
-
-    allImageUrls.forEach((url) => {
-      const img = new Image();
-      img.src = url;
-      img.onload = imageLoaded;
-      img.onerror = imageLoaded;
-    });
-  });
+    firstSlideLoaded.then(() => setTimeout(hideSplash, 300));
+    setTimeout(hideSplash, SPLASH_MAX_MS);
+  })();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
