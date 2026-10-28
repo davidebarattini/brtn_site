@@ -1146,3 +1146,13 @@ footer {
     overflow-x: hidden;
   }
 }
+
+/* Icone SVG nel codice (ex Bootstrap Icons): stessa misura e allineamento
+   dell'icona-font, grandi quanto il font-size del contenitore */
+.bi {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  flex-shrink: 0;
+}
