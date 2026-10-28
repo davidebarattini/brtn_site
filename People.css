@@ -85,15 +85,14 @@ html, body {
   margin-top: 24px;
 }
 
-/* Mobile: freccia centrata tra navbar (66px) e lettere del titolo, che
-   restano dove sono (90 + 16 + 10 = 116px, il margine di prima) */
+/* Mobile: niente freccia, il titolo torna al suo margine */
 @media (max-width: 576px) {
   .back-link {
-    margin-top: 90px;
+    display: none;
   }
 
   .back-link + .page-title {
-    margin-top: 10px;
+    margin-top: 116px;
   }
 }
 

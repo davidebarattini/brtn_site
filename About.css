@@ -444,15 +444,14 @@ body.menu-open {
   margin-top: 24px;
 }
 
-/* Mobile: freccia centrata tra navbar (66px) e lettere del titolo, che
-   resta dov'è (115 + 16 + 37 = 168px, il margine di prima) */
+/* Mobile: niente freccia, il titolo torna al suo margine */
 @media (max-width: 576px) {
   .back-link {
-    margin-top: 115px;
+    display: none;
   }
 
   .back-link + .page-title {
-    margin-top: 37px;
+    margin-top: 168px;
   }
 }
 

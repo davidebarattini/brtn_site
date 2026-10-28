@@ -1,6 +1,7 @@
-// Numero di colonne: 3 da desktop in giù a 2 su tablet/mobile
+// Numero di colonne: 3 su desktop, 2 su tablet, 1 su mobile
 // (combacia con i breakpoint delle media query nei CSS delle gallerie)
 function getColumnCount() {
+  if (window.matchMedia("(max-width: 576px)").matches) return 1;
   return window.matchMedia("(max-width: 992px)").matches ? 2 : 3;
 }
 
@@ -30,7 +31,11 @@ function buildGallery(container, images, columnCount) {
   }
   container.appendChild(columns);
 
-  images.forEach((item, idx) => {
+  // Su mobile, colonna singola: stesso ordine di desktop ma verticali e
+  // orizzontali alternate (alternateKeepingOrder sta in gallery-order.js)
+  const ordered = columnCount === 1 ? alternateKeepingOrder(images) : images;
+
+  ordered.forEach((item, idx) => {
     const wrapper = document.createElement("div");
     wrapper.className = "gallery-item";
 
