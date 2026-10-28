@@ -151,6 +151,49 @@ html, body {
   overflow: hidden;
 }
 
+/* Credito in hover: "Photo by Davide Barattini" in basso a destra dentro la
+   foto, su una leggera sfumatura scura per leggerlo anche sulle foto chiare.
+   È uno pseudo-elemento (non testo nella pagina: Google non lo legge ripetuto)
+   e non intercetta il clic, che deve arrivare alla foto per aprire la lightbox.
+   Margini: 16px a destra e 16px sotto (interlinea 1, quindi il testo è alto
+   quanto il font e i due spazi risultano uguali a occhio); 12px su tablet. */
+.action-section .masonry .gallery-item {
+  position: relative;
+}
+
+@media (hover: hover) {
+  .action-section .masonry .gallery-item::after {
+    content: "Photo by Davide Barattini";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 48px 16px 16px;
+    text-align: right;
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  .action-section .masonry .gallery-item:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: hover) and (max-width: 992px) {
+  .action-section .masonry .gallery-item::after {
+    padding: 40px 12px 12px;
+    font-size: 12px;
+  }
+}
+
 /* Landscape tipico: 2048x1365 ≈ 3:2 */
 .action-section .masonry .gallery-item[data-orientation="landscape"] {
   aspect-ratio: 3 / 2;

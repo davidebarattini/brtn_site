@@ -40,6 +40,13 @@ jobs:
           node-version: "20"
       - name: Generate galleries JSON and sitemap
         run: node scripts/generate-galleries.mjs
+      # Autore, credito e copyright nei metadati delle foto pubblicate
+      # (i file nel repository restano quelli originali)
+      - name: Add photo credits to image metadata
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libimage-exiftool-perl
+          bash scripts/add-photo-credits.sh img
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
