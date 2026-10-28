@@ -18,23 +18,43 @@
   opacity: 1;
 }
 
-/* Immagine: grande su desktop, lascia spazio solo a X e frecce */
-.lightbox-img {
-  display: block;
-  max-width: calc(100vw - 240px);
-  max-height: calc(100vh - 144px);
-  object-fit: contain;
-  border-radius: 0;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  /* Apertura: leggero zoom da più piccola, insieme alla dissolvenza */
+/* Foto + didascalia: il blocco è largo quanto la foto, così la didascalia
+   resta sotto il bordo destro sia per le verticali sia per le orizzontali.
+   Apertura: leggero zoom da più piccola, insieme alla dissolvenza. */
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   opacity: 0;
   transform: scale(0.94);
   transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.lightbox.is-open .lightbox-img {
+.lightbox.is-open .lightbox-figure {
   opacity: 1;
   transform: scale(1);
+}
+
+/* Immagine: grande su desktop, lascia spazio a X, frecce e didascalia.
+   Misure in vw/vh: in percentuale dipenderebbero dal blocco, che dipende
+   dalla foto stessa. */
+.lightbox-img {
+  display: block;
+  max-width: calc(100vw - 240px);
+  max-height: calc(100vh - 176px);
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: right;
 }
 
 /* Pulsante chiudi: identico a .mobile-menu .close-menu */
@@ -115,8 +135,13 @@
   }
 
   .lightbox-img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 80vw;
+    max-height: 80vh;
+  }
+
+  .lightbox-caption {
+    margin-top: 8px;
+    font-size: 12px;
   }
 
   .lightbox .prev,
@@ -137,7 +162,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .lightbox,
-  .lightbox-img {
+  .lightbox-figure {
     transition: none;
   }
 }

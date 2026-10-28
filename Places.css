@@ -95,29 +95,35 @@ html, body {
   }
 }
 
-/* Descrizione sotto il titolo: stesso testo e stessa distanza dell'About
-   (14px, interlinea 1.8; 32px tra titolo e testo). La galleria resta alla
-   distanza che prima aveva dal titolo. */
+/* Descrizione sotto il titolo: stessa posizione e stesso testo della
+   descrizione dei progetti (.project-subtitle in Project1/2.css) */
 .page-title.has-intro {
   margin-bottom: 32px;
 }
 
 .page-intro {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #333;
-  margin: 0 0 56px;
+  font-size: 16px;
+  margin-top: 0;
+  line-height: 1.6;
+  margin-bottom: 64px;
+  text-wrap: pretty;
+  orphans: 2;
+  widows: 2;
 }
 
 @media (max-width: 992px) {
-  .page-intro {
+  .page-title.has-intro {
     margin-bottom: 60px;
   }
 }
 
 @media (max-width: 576px) {
-  .page-intro {
+  .page-title.has-intro {
     margin-bottom: 40px;
+  }
+
+  .page-intro {
+    font-size: 14px;
   }
 }
 

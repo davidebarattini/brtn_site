@@ -39,6 +39,7 @@
 
   <!-- CSS personalizzato -->
   <link rel="stylesheet" href="Project1.css">
+  <link rel="stylesheet" href="lightbox.css">
 </head>
 
 <body class="gallery-page">
@@ -243,10 +244,17 @@
 
   <!-- Lightbox -->
 <div id="lightbox" class="lightbox">
-  <span class="close">&times;</span>
-  <img loading="lazy" class="lightbox-img" src="" alt="">
-  <span class="prev">&#10094;</span>
-  <span class="next">&#10095;</span>
+  <button class="close" aria-label="Close"><i class="bi bi-x"></i></button>
+  <figure class="lightbox-figure">
+    <img class="lightbox-img" src="" alt="">
+    <figcaption class="lightbox-caption">Photo by Davide Barattini</figcaption>
+  </figure>
+  <button class="prev" aria-label="Previous photo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 4 7 12 15 20"/></svg>
+  </button>
+  <button class="next" aria-label="Next photo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 4 17 12 9 20"/></svg>
+  </button>
 </div>
 
 
