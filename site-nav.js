@@ -126,8 +126,28 @@
       { passive: true }
     );
 
+    // Freccia "indietro" dei progetti: torna alla pagina precedente se arriva
+    // dal sito, altrimenti segue il link (home)
+    function setupBackLink() {
+      const backLink = document.querySelector(".back-link");
+      if (!backLink) return;
+      backLink.addEventListener("click", (e) => {
+        let fromSite = false;
+        try {
+          fromSite = new URL(document.referrer).origin === window.location.origin;
+        } catch {
+          fromSite = false;
+        }
+        if (fromSite && window.history.length > 1) {
+          e.preventDefault();
+          window.history.back();
+        }
+      });
+    }
+
     setupDropdown();
     setupMobileMenu();
+    setupBackLink();
 
     if (galleryDropdown && navbar) {
       updateDropdownBackground();

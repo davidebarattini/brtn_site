@@ -14,6 +14,7 @@
 
   <!-- CSS personalizzato -->
   <link rel="stylesheet" href="People.css">
+  <link rel="stylesheet" href="lightbox.css">
 </head>
 
 <body class="gallery-page">
@@ -75,6 +76,9 @@
 
   <!-- Titolo -->
   <div class="container container-custom">
+    <a class="back-link" href="index.html" aria-label="Torna indietro">
+      <svg viewBox="0 0 32 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="31" y1="8" x2="1" y2="8"/><polyline points="8 1 1 8 8 15"/></svg>
+    </a>
     <h1 class="page-title">People</h1>
   </div>
 
@@ -183,10 +187,14 @@
 
   <!-- Lightbox -->
 <div id="lightbox" class="lightbox">
-  <span class="close">&times;</span>
-  <img loading="lazy" class="lightbox-img" src="" alt="">
-  <span class="prev">&#10094;</span>
-  <span class="next">&#10095;</span>
+  <button class="close" aria-label="Chiudi"><i class="bi bi-x"></i></button>
+  <img class="lightbox-img" src="" alt="">
+  <button class="prev" aria-label="Foto precedente">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 4 7 12 15 20"/></svg>
+  </button>
+  <button class="next" aria-label="Foto successiva">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 4 17 12 9 20"/></svg>
+  </button>
 </div>
 
 

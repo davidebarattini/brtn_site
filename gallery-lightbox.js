@@ -11,6 +11,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentIndex = 0;
   let activeMasonry = masonries[0];
+  let hideTimer = null;
+
+  function isOpen() {
+    return lightbox.classList.contains("is-open");
+  }
+
+  // Apertura: prima la mostra, poi al frame dopo aggiunge .is-open così parte
+  // la transizione (dissolvenza + zoom dell'immagine, in lightbox.css)
+  function openLightbox() {
+    window.clearTimeout(hideTimer);
+    lightbox.style.display = "flex";
+    void lightbox.offsetWidth;
+    lightbox.classList.add("is-open");
+  }
+
+  // Chiusura: toglie .is-open e la nasconde a transizione finita
+  // (subito se la pagina non ha transizioni, come nei progetti)
+  function closeLightbox() {
+    if (!isOpen()) return;
+    lightbox.classList.remove("is-open");
+    const duration = parseFloat(getComputedStyle(lightbox).transitionDuration) * 1000 || 0;
+    window.clearTimeout(hideTimer);
+    hideTimer = window.setTimeout(() => {
+      lightbox.style.display = "none";
+      lightboxImg.src = "";
+    }, duration);
+  }
 
   function getImages() {
     return Array.from(activeMasonry.querySelectorAll("img"));
@@ -37,14 +64,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       currentIndex = index;
       showImage();
-      lightbox.style.display = "flex";
+      openLightbox();
     });
   });
 
-  closeBtn.addEventListener("click", () => {
-    lightbox.style.display = "none";
-    lightboxImg.src = "";
-  });
+  closeBtn.addEventListener("click", closeLightbox);
 
   nextBtn.addEventListener("click", () => {
     currentIndex += 1;
@@ -57,8 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.addEventListener("keydown", (e) => {
-    if (lightbox.style.display !== "flex") return;
-    if (e.key === "Escape") lightbox.style.display = "none";
+    if (!isOpen()) return;
+    if (e.key === "Escape") closeLightbox();
     if (e.key === "ArrowRight") {
       currentIndex += 1;
       showImage();
@@ -81,6 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) lightbox.style.display = "none";
+    if (e.target === lightbox) closeLightbox();
   });
 });

@@ -1,6 +1,6 @@
 // Colonne bilanciate come nelle pagine Action/People/Places: ogni foto tiene il
-// suo formato reale. Le due colonne di destra partono sotto il blocco info, che
-// resta in alto a destra.
+// suo formato reale. Su desktop e tablet due colonne: quella di destra parte
+// sotto il blocco info, che resta in alto a destra.
 const GAP_DESKTOP = 12;
 const GAP_MOBILE = 8;
 
@@ -17,9 +17,8 @@ function isCompact() {
 }
 
 function getColumnCount() {
-  // Mobile: una sola colonna
-  if (window.matchMedia("(max-width: 576px)").matches) return 1;
-  return isCompact() ? 2 : 4;
+  // Mobile: una sola colonna; desktop e tablet: due
+  return window.matchMedia("(max-width: 576px)").matches ? 1 : 2;
 }
 
 // Generatore pseudo-casuale con seme: l'ordine mescolato resta lo stesso a ogni visita
@@ -43,30 +42,103 @@ function shuffle(list, random) {
   return out;
 }
 
-// Ordine per la colonna singola su mobile (attivo con data-mobile-mix): foto
-// mescolate, mai due verticali di seguito. Ogni verticale va in uno spazio
-// diverso tra le orizzontali, quindi si alternano o restano due orizzontali e
-// una verticale. Se le verticali sono troppe per evitarlo, l'ordine non cambia.
+// Ordine per la colonna singola su mobile: foto mescolate, verticali e
+// orizzontali alternate il più possibile. Il formato più numeroso viene diviso
+// in gruppi il più uniformi possibile, separati da una foto dell'altro formato:
+// se le verticali non sono di più non ne finiscono mai due di seguito,
+// altrimenti i doppioni sono il meno possibile e sparsi lungo la pagina.
 function mixForMobile(images, seedText) {
   const random = seededRandom(seedText);
   const portraits = shuffle(images.filter((img) => img.orientation === "portrait"), random);
   const others = shuffle(images.filter((img) => img.orientation !== "portrait"), random);
-  if (portraits.length > others.length + 1) return images;
 
-  // Spazi disponibili: prima, tra e dopo le orizzontali
-  const slots = shuffle(
-    Array.from({ length: others.length + 1 }, (_, i) => i),
-    random
-  ).slice(0, portraits.length);
-  const withPortrait = new Set(slots);
+  const [many, few] =
+    portraits.length > others.length ? [portraits, others] : [others, portraits];
+  if (few.length === 0) return many;
+
+  // Gruppi: prima, tra e dopo le foto del formato meno numeroso
+  const groupCount = few.length + 1;
+  const sizes = new Array(groupCount).fill(Math.floor(many.length / groupCount));
+  const extra = many.length % groupCount;
+  // Con formati in pari numero un gruppo resta vuoto: solo a un estremo,
+  // altrimenti due foto uguali finirebbero vicine
+  const candidates =
+    sizes[0] === 0
+      ? shuffle([0, groupCount - 1], random).slice(0, 1)
+      : shuffle(Array.from({ length: groupCount }, (_, i) => i), random).slice(0, extra);
+  if (sizes[0] === 0) {
+    sizes.fill(1);
+    sizes[candidates[0]] = 0;
+  } else {
+    candidates.forEach((i) => {
+      sizes[i] += 1;
+    });
+  }
 
   const out = [];
-  let p = 0;
-  for (let i = 0; i <= others.length; i += 1) {
-    if (withPortrait.has(i)) out.push(portraits[p++]);
-    if (i < others.length) out.push(others[i]);
-  }
+  let m = 0;
+  sizes.forEach((size, i) => {
+    out.push(...many.slice(m, m + size));
+    m += size;
+    if (i < few.length) out.push(few[i]);
+  });
   return out;
+}
+
+// Come mixForMobile ma senza mescolare (attivo con data-mobile-keep-order):
+// si segue l'ordine di desktop e una foto viene anticipata solo quando serve
+// all'alternanza. Stessi limiti: verticali di seguito al massimo quante ne
+// impone il loro numero, orizzontali al massimo due di seguito (o di più solo
+// se sono molte più delle verticali).
+function alternateKeepingOrder(images) {
+  const isPortrait = (img) => img.orientation === "portrait";
+  const portraits = images.filter(isPortrait);
+  const others = images.filter((img) => !isPortrait(img));
+  const P = portraits.length;
+  const L = others.length;
+  if (P === 0 || L === 0) return images;
+
+  const maxPortraitRun = Math.max(1, Math.ceil(P / (L + 1)));
+  const maxOtherRun = Math.max(2, Math.ceil(L / (P + 1)));
+  const maxPortraitPairs = Math.max(0, P - (L + 1));
+  const position = new Map(images.map((img, i) => [img, i]));
+
+  // Ricerca in profondità: a ogni passo prova prima la foto che su desktop
+  // viene prima; la prima sequenza valida trovata è la più vicina a desktop
+  const failed = new Set();
+  const out = [];
+  const place = (pi, li, lastPortrait, run, pairs) => {
+    if (pi === P && li === L) return true;
+    const key = `${pi},${li},${lastPortrait},${run},${pairs}`;
+    if (failed.has(key)) return false;
+
+    const options = [];
+    if (pi < P) options.push(true);
+    if (li < L) options.push(false);
+    options.sort(
+      (a, b) =>
+        position.get(a ? portraits[pi] : others[li]) - position.get(b ? portraits[pi] : others[li])
+    );
+
+    for (const portrait of options) {
+      const sameAsLast = out.length > 0 && portrait === lastPortrait;
+      const nextRun = sameAsLast ? run + 1 : 1;
+      const nextPairs = pairs + (portrait && sameAsLast ? 1 : 0);
+      if (portrait && (nextRun > maxPortraitRun || nextPairs > maxPortraitPairs)) continue;
+      if (!portrait && nextRun > maxOtherRun) continue;
+
+      out.push(portrait ? portraits[pi] : others[li]);
+      if (place(pi + (portrait ? 1 : 0), li + (portrait ? 0 : 1), portrait, nextRun, nextPairs)) {
+        return true;
+      }
+      out.pop();
+    }
+
+    failed.add(key);
+    return false;
+  };
+
+  return place(0, 0, false, 0, 0) ? out : images;
 }
 
 async function loadGallery(key) {
@@ -127,25 +199,25 @@ function buildGallery(container, images) {
 
   const colHeights = new Array(columnCount).fill(0);
 
-  // Da desktop le ultime due colonne partono sotto il blocco info: le misure
-  // vanno prese a colonne già nel DOM, altrimenti la larghezza non è nota.
+  // Su desktop e tablet la colonna di destra parte sotto il blocco info: le
+  // misure vanno prese a colonne già nel DOM, altrimenti la larghezza non è nota.
   const info = container.querySelector(".project-info");
-  if (info && columnCount === 4) {
+  if (info && columnCount === 2) {
     const colWidth = cols[0].getBoundingClientRect().width;
     const offset = info.getBoundingClientRect().height + gap;
     if (colWidth > 0 && offset > gap) {
-      cols[2].style.paddingTop = `${offset}px`;
-      cols[3].style.paddingTop = `${offset}px`;
+      cols[1].style.paddingTop = `${offset}px`;
       // Le altezze sono in unità di larghezza colonna, come HEIGHT_RATIO
-      colHeights[2] = offset / colWidth;
-      colHeights[3] = colHeights[2];
+      colHeights[1] = offset / colWidth;
     }
   }
 
   const ordered =
-    columnCount === 1 && container.hasAttribute("data-mobile-mix")
-      ? mixForMobile(images, container.getAttribute("data-project-gallery") || "")
-      : images;
+    columnCount !== 1
+      ? images
+      : container.hasAttribute("data-mobile-keep-order")
+        ? alternateKeepingOrder(images)
+        : mixForMobile(images, container.getAttribute("data-project-gallery") || "");
 
   ordered.forEach((item, idx) => {
     const wrapper = createItem(item, idx);
@@ -201,10 +273,10 @@ async function renderProjectGalleries() {
   window.addEventListener("resize", () => {
     window.clearTimeout(resizeTimer);
     resizeTimer = window.setTimeout(() => {
-      // Ricostruisci al cambio di colonne, e su desktop anche al cambio di
-      // larghezza: il distacco delle due colonne di destra dipende dalle misure.
+      // Ricostruisci al cambio di colonne, e su desktop e tablet anche al cambio
+      // di larghezza: il distacco della colonna di destra dipende dalle misure.
       const next = getColumnCount();
-      const widthChanged = next === 4;
+      const widthChanged = next === 2;
       if (next === columnCount && !widthChanged) return;
       columnCount = next;
       rebuildAll();

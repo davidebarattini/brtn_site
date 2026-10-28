@@ -1,6 +1,6 @@
 {
   "title": "Morzine",
-  "generatedAt": "2026-10-19T00:35:06.025Z",
+  "generatedAt": "2026-10-28T00:45:07.219Z",
   "images": [
     {
       "src": "img/Morzine/01_Action1.jpg",
@@ -46,6 +46,46 @@
       "src": "img/Morzine/09_People9_low.jpg",
       "alt": "",
       "orientation": "portrait"
+    },
+    {
+      "src": "img/Morzine/10_DSC01692.jpg",
+      "alt": "",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Morzine/11_DSC02007.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Morzine/12_DSC02014.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Morzine/13_DSC02241.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Morzine/14_DSC02357.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Morzine/15_DSC02385.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Morzine/16_DSC02408.jpg",
+      "alt": "",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Morzine/17_DSC03456.jpg",
+      "alt": "",
+      "orientation": "landscape"
     }
   ]
 }

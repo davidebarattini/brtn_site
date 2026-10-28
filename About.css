@@ -419,6 +419,43 @@ body.menu-open {
   }
 }
 
+/* Freccia per tornare indietro, tra navbar e titolo: occupa parte del margine
+   sopra il titolo, così il titolo resta alla stessa altezza */
+.back-link {
+  display: inline-flex;
+  margin-top: 128px;
+  color: inherit;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, transform 0.25s ease;
+}
+
+.back-link:hover {
+  color: inherit;
+  opacity: 1;
+  transform: translateX(-4px);
+}
+
+.back-link svg {
+  width: 32px;
+  height: 16px;
+}
+
+.back-link + .page-title {
+  margin-top: 24px;
+}
+
+/* Mobile: freccia centrata tra navbar (66px) e lettere del titolo, che
+   resta dov'è (115 + 16 + 37 = 168px, il margine di prima) */
+@media (max-width: 576px) {
+  .back-link {
+    margin-top: 115px;
+  }
+
+  .back-link + .page-title {
+    margin-top: 37px;
+  }
+}
+
 @media (max-width: 576px) {
   .page-title2 {
     font-size: 28px;
@@ -1024,6 +1061,7 @@ footer {
   }
 }
 
+.about-page .back-link,
 .about-page .page-title,
 .about-page .page-title2,
 .about-page .about-text-col > p,
@@ -1036,7 +1074,8 @@ footer {
   animation: about-img-in 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.3s backwards;
 }
 
-/* Sequenza: titolo → testo → immagine → contatti → Stay up to date */
+/* Sequenza: freccia e titolo → testo → immagine → contatti → Stay up to date */
+.about-page .back-link,
 .about-page .page-title { animation-delay: 0.1s; }
 .about-page .about-text-col > p:nth-child(1) { animation-delay: 0.25s; }
 .about-page .about-text-col > p:nth-child(2) { animation-delay: 0.35s; }
@@ -1055,6 +1094,7 @@ footer {
 .about-page .btn-follow-instagram { animation-delay: 1.35s; }
 
 @media (prefers-reduced-motion: reduce) {
+  .about-page .back-link,
   .about-page .page-title,
   .about-page .page-title2,
   .about-page .about-text-col > p,

@@ -82,6 +82,43 @@ html, body {
   }
 }
 
+/* Freccia per tornare indietro, tra navbar e titolo: occupa parte del margine
+   sopra il titolo, così il titolo resta alla stessa altezza */
+.back-link {
+  display: inline-flex;
+  margin-top: 128px;
+  color: inherit;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, transform 0.25s ease;
+}
+
+.back-link:hover {
+  color: inherit;
+  opacity: 1;
+  transform: translateX(-4px);
+}
+
+.back-link svg {
+  width: 32px;
+  height: 16px;
+}
+
+.back-link + .page-title {
+  margin-top: 24px;
+}
+
+/* Mobile: freccia centrata tra navbar (66px) e lettere del titolo, che
+   restano dove sono (90 + 16 + 10 = 116px, il margine di prima) */
+@media (max-width: 576px) {
+  .back-link {
+    margin-top: 90px;
+  }
+
+  .back-link + .page-title {
+    margin-top: 10px;
+  }
+}
+
 /* ---------------- Navbar ---------------- */
 
 
@@ -466,7 +503,7 @@ body.menu-open {
 
 /* Griglia progetto: colonne bilanciate come in Action/People/Places,
    ogni foto tiene il suo formato reale.
-   Il blocco info sta in alto a destra e le ultime due colonne partono
+   Il blocco info sta in alto a destra e la colonna di destra parte
    sotto di esso (il distacco lo calcola project-gallery-render.js). */
 .project-grid {
   position: relative;
@@ -478,7 +515,7 @@ body.menu-open {
   position: absolute;
   top: 0;
   right: 0;
-  width: calc(50% - 6px); /* esattamente le due colonne di destra */
+  width: calc(50% - 6px); /* esattamente la colonna di destra */
 }
 
 .project-grid .gallery-columns {
@@ -525,16 +562,14 @@ body.menu-open {
   margin-bottom: 150px;
 }
 
-/* Tablet e mobile: due colonne, info a tutta larghezza sopra la griglia */
+/* Tablet: sempre due colonne con le info in alto a destra, distanze più strette */
 @media (max-width: 992px) {
   .project-grid {
     margin-bottom: 80px;
   }
 
   .project-grid > .project-info {
-    position: static;
-    width: 100%;
-    margin-bottom: 24px;
+    width: calc(50% - 4px); /* colonna di destra con gap da 8px */
   }
 
   .project-grid .gallery-columns,
@@ -544,6 +579,15 @@ body.menu-open {
 
   .project-info-only {
     margin-bottom: 80px;
+  }
+}
+
+/* Mobile: una colonna, info a tutta larghezza sopra la griglia */
+@media (max-width: 576px) {
+  .project-grid > .project-info {
+    position: static;
+    width: 100%;
+    margin-bottom: 24px;
   }
 }
 
@@ -741,7 +785,7 @@ body.menu-open {
 }
 
 .category-img1 {
-  height: 252px;
+  aspect-ratio: 3 / 2; /* stesse proporzioni della home */
   overflow: hidden;
 }
 
@@ -754,7 +798,7 @@ body.menu-open {
 }
 
 .category-img2 {
-  height: 252px;
+  aspect-ratio: 3 / 2; /* stesse proporzioni della home */
   overflow: hidden;
 }
 
@@ -767,7 +811,7 @@ body.menu-open {
 }
 
 .category-img3 {
-  height: 252px;
+  aspect-ratio: 3 / 2; /* stesse proporzioni della home */
   overflow: hidden;
 }
 
@@ -814,6 +858,7 @@ body.menu-open {
 /* Responsive tablet */
 @media (max-width: 992px) {
   .category-img1 {
+    aspect-ratio: auto; /* con altezza fissa la larghezza deve restare piena */
     height: 200px;
   }
 }
@@ -821,6 +866,7 @@ body.menu-open {
 /* Responsive mobile */
 @media (max-width: 576px) {
   .category-img1 {
+    aspect-ratio: auto; /* con altezza fissa la larghezza deve restare piena */
     height: 94px;
   }
 }
@@ -828,6 +874,7 @@ body.menu-open {
 /* Responsive tablet */
 @media (max-width: 992px) {
   .category-img2 {
+    aspect-ratio: auto; /* con altezza fissa la larghezza deve restare piena */
     height: 200px;
   }
 }
@@ -835,6 +882,7 @@ body.menu-open {
 /* Responsive mobile */
 @media (max-width: 576px) {
   .category-img2 {
+    aspect-ratio: auto; /* con altezza fissa la larghezza deve restare piena */
     height: 94px;
   }
 }
@@ -842,6 +890,7 @@ body.menu-open {
 /* Responsive tablet */
 @media (max-width: 992px) {
   .category-img3 {
+    aspect-ratio: auto; /* con altezza fissa la larghezza deve restare piena */
     height: 200px;
   }
 }
@@ -849,6 +898,7 @@ body.menu-open {
 /* Responsive mobile */
 @media (max-width: 576px) {
   .category-img3 {
+    aspect-ratio: auto; /* con altezza fissa la larghezza deve restare piena */
     height: 94px;
   }
 }

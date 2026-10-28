@@ -1,0 +1,143 @@
+/* ---------------- Lightbox overlay (Action / People / Places) ----------------
+   La X ha lo stesso stile e la stessa posizione di quella del menu hamburger:
+   in alto a destra, alla distanza del padding di .mobile-menu. */
+
+.lightbox {
+  display: none; /* nascosta di default, la mostra gallery-lightbox.js */
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+}
+
+/* Immagine: grande su desktop, lascia spazio solo a X e frecce */
+.lightbox-img {
+  display: block;
+  max-width: calc(100vw - 240px);
+  max-height: calc(100vh - 144px);
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  /* Apertura: leggero zoom da più piccola, insieme alla dissolvenza */
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.lightbox.is-open .lightbox-img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Pulsante chiudi: identico a .mobile-menu .close-menu */
+.lightbox .close {
+  position: absolute;
+  top: 24px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 2.5rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Frecce di navigazione: chevron sottili */
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  padding: 16px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.75;
+  user-select: none;
+  transition: opacity 0.2s ease;
+}
+
+.lightbox .prev { left: 24px; }
+.lightbox .next { right: 24px; }
+
+/* Più grandi ma con la linea sempre sottile (~1.5px a 48px) */
+.lightbox .prev svg,
+.lightbox .next svg {
+  width: 48px;
+  height: 48px;
+  stroke-width: 0.75;
+}
+
+.lightbox .prev:hover,
+.lightbox .next:hover {
+  opacity: 1;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .lightbox .close {
+    right: 32px;
+  }
+
+  .lightbox-img {
+    max-width: calc(100vw - 160px);
+  }
+
+  .lightbox .prev { left: 12px; }
+  .lightbox .next { right: 12px; }
+
+  .lightbox .prev svg,
+  .lightbox .next svg {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Mobile: misure dell'immagine come prima */
+@media (max-width: 576px) {
+  .lightbox .close {
+    top: 16px;
+    right: 16px;
+  }
+
+  .lightbox-img {
+    max-width: 80%;
+    max-height: 80%;
+  }
+
+  .lightbox .prev,
+  .lightbox .next {
+    padding: 8px;
+  }
+
+  .lightbox .prev { left: 0; }
+  .lightbox .next { right: 0; }
+
+  .lightbox .prev svg,
+  .lightbox .next svg {
+    width: 32px;
+    height: 32px;
+    stroke-width: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox,
+  .lightbox-img {
+    transition: none;
+  }
+}

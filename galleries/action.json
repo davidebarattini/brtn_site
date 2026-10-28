@@ -1,6 +1,6 @@
 {
   "title": "Action",
-  "generatedAt": "2026-10-19T00:35:05.990Z",
+  "generatedAt": "2026-10-28T00:45:07.201Z",
   "images": [
     {
       "src": "img/Action/01_Action.jpg",
@@ -43,11 +43,6 @@
       "orientation": "landscape"
     },
     {
-      "src": "img/Action/09_Action.jpg",
-      "alt": "",
-      "orientation": "landscape"
-    },
-    {
       "src": "img/Action/10_Action.jpg",
       "alt": "",
       "orientation": "portrait"
@@ -84,6 +79,11 @@
     },
     {
       "src": "img/Action/17_Action.jpg",
+      "alt": "",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Action/17_DSC03456.jpg",
       "alt": "",
       "orientation": "landscape"
     },
