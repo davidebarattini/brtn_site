@@ -1,0 +1,122 @@
+/* ---------------- Pagine di consegna al cliente (es. charlie-mania.html) ----------------
+   Si aggiunge ad action.css (galleria, footer, card) e lightbox.css. */
+
+/* Freccia indietro con testo: visibile anche su mobile, a differenza delle
+   altre pagine, perché qui è un invito a scoprire il resto del portfolio */
+.back-link.back-link-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+/* Titolo (le foto si scaricano una per una dall'icona su ciascuna) */
+.delivery-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px 32px;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.delivery-head .page-title {
+  margin: 0;
+}
+
+/* Icona di download sopra la foto, in alto a destra: 12px dai bordi, come
+   un pulsante tondo scuro e semitrasparente (leggibile su foto chiare e scure).
+   Con il mouse compare in hover insieme allo zoom e al credito; su telefono e
+   tablet (niente hover) resta sempre visibile, altrimenti non si potrebbe
+   scaricare. */
+.download-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.45);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+}
+
+.download-btn:hover,
+.download-btn:focus-visible {
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+}
+
+@media (hover: hover) {
+  .download-btn {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  .gallery-item:hover .download-btn,
+  .download-btn:focus-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Credito sopra le foto: solo su mobile (su desktop lo mostra l'hover) */
+.photo-credit-mobile {
+  display: none;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .delivery-head {
+    margin-bottom: 60px;
+  }
+}
+
+/* Mobile: freccia centrata tra navbar e titolo (come nelle altre pagine
+   prima di toglierla), pulsante sotto il titolo, due colonne di foto */
+@media (max-width: 576px) {
+  .back-link.back-link-text {
+    margin-top: 88px;
+    font-size: 13px;
+  }
+
+  .delivery-head {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 16px;
+    margin-bottom: 20px;
+  }
+
+  /* Allineato a destra come gli altri crediti del sito, 8px sopra le foto;
+     lo spazio dalla descrizione resta quello di prima (48px in tutto) */
+  .photo-credit-mobile {
+    display: block;
+  }
+
+  .photo-credit-mobile p {
+    margin: -24px 0 8px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #666;
+    text-align: right;
+  }
+
+  .download-btn {
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+}

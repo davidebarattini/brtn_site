@@ -1,0 +1,4 @@
+# Originali ad alta risoluzione e zip delle consegne: troppo grandi per GitHub
+# (limite 100 MB a file, 1 GB per il sito). Stanno su un servizio esterno.
+img/*/Download/
+*.zip

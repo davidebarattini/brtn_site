@@ -1233,3 +1233,9 @@ footer {
   vertical-align: -0.125em;
   flex-shrink: 0;
 }
+
+/* Ancora #projects (link "Scopri gli altri progetti"): il titolo non finisce
+   sotto la navbar fissa */
+#projects {
+  scroll-margin-top: 66px;
+}

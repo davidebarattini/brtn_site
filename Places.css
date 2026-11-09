@@ -119,11 +119,12 @@ html, body {
 
 @media (max-width: 576px) {
   .page-title.has-intro {
-    margin-bottom: 40px;
+    margin-bottom: 20px; /* metà dello spazio tra titolo e descrizione */
   }
 
   .page-intro {
     font-size: 14px;
+    margin-bottom: 48px; /* un po' meno spazio prima della galleria */
   }
 }
 

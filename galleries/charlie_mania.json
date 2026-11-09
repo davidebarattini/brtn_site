@@ -1,0 +1,791 @@
+{
+  "title": "CHARLIE mania",
+  "generatedAt": "2026-11-09T02:36:17.580Z",
+  "images": [
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06303.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 1",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06315.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 2",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06316.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 3",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06321.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 4",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06322.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 5",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06325.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 6",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06329.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 7",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06332.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 8",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06335.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 9",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06337.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 10",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06340.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 11",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06345.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 12",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06357.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 13",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06360.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 14",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06366.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 15",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06367.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 16",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06373.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 17",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06377.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 18",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06378.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 19",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06384.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 20",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06386.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 21",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06390.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 22",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06391.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 23",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06397.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 24",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06400.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 25",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06402.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 26",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06405.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 27",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06409.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 28",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06413.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 29",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06419.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 30",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06423.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 31",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06427.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 32",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06432.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 33",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06435.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 34",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06438.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 35",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06445.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 36",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06450.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 37",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06451.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 38",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06457.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 39",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06460.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 40",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06462.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 41",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06466.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 42",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06474.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 43",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06480.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 44",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06482.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 45",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06487.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 46",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06492.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 47",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06496.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 48",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06499.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 49",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06502.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 50",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06504.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 51",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06506.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 52",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06509.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 53",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06514.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 54",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06522.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 55",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06525.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 56",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06530.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 57",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06531.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 58",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06534.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 59",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06535.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 60",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06538.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 61",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06541.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 62",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06548.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 63",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06552.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 64",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06555.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 65",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06559.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 66",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06565.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 67",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06566.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 68",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06574.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 69",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06582.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 70",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06589.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 71",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06594.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 72",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06595.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 73",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06598.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 74",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06602.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 75",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06605.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 76",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06607.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 77",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06609.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 78",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06615.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 79",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06619.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 80",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06620.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 81",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06624.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 82",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06631.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 83",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06634.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 84",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06646.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 85",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06657.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 86",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06659.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 87",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06663.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 88",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06667.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 89",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06670.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 90",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06673.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 91",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06676.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 92",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06678.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 93",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06681.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 94",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06683.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 95",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06685.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 96",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06705.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 97",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06708.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 98",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06712.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 99",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06715.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 100",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06720.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 101",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06725.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 102",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06728.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 103",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06736.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 104",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06745.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 105",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06749.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 106",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06750.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 107",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06753.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 108",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06758.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 109",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06763.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 110",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06767.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 111",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06782.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 112",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06789.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 113",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06797.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 114",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06798.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 115",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06804.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 116",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06806.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 117",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06853.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 118",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06861.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 119",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06891.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 120",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06898.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 121",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06905.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 122",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06941.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 123",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06943.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 124",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06946.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 125",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06954.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 126",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06956.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 127",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06966.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 128",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06971.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 129",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06977.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 130",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC06990.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 131",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07004.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 132",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07027.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 133",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07030.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 134",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07036.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 135",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07047.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 136",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07054.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 137",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07055.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 138",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07076-1.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 139",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07084.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 140",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07087.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 141",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07089.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 142",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07092.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 143",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07095.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 144",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07102.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 145",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07103.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 146",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07106.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 147",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07114.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 148",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07115.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 149",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07119.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 150",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07126.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 151",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07135.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 152",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07138.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 153",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07143.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 154",
+      "orientation": "landscape"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07150.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 155",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07155.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 156",
+      "orientation": "portrait"
+    },
+    {
+      "src": "img/Charlie_Mania/Anteprime/DSC07167.jpg",
+      "alt": "CHARLIE mania, photographed by Davide Barattini – photo 157",
+      "orientation": "landscape"
+    }
+  ]
+}

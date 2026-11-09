@@ -72,6 +72,15 @@ const GALLERIES = [
     alt: "WRC Rally Italia Sardegna, photographed by Davide Barattini",
   },
   { key: "quater", title: "Quater", dir: "img/Quater", alt: "Photography by Davide Barattini" },
+  // Consegna al cliente (charlie-mania.html, noindex): niente "page", quindi
+  // le foto non finiscono nella sitemap. Solo anteprime: gli originali stanno
+  // fuori da GitHub (vedi data-download-base nella pagina).
+  {
+    key: "charlie_mania",
+    title: "CHARLIE mania",
+    dir: "img/Charlie_Mania/Anteprime",
+    alt: "CHARLIE mania, photographed by Davide Barattini",
+  },
 ];
 
 // Pagine della sitemap, nell'ordine in cui compaiono
