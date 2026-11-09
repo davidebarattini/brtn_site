@@ -4,5 +4,7 @@ Allow: /
 # Foto consegnate ai clienti: fuori da Google Immagini
 # (le pagine di consegna hanno già il meta noindex)
 Disallow: /img/Charlie_Mania/
+# Eccezione: l'immagine di anteprima del link (WhatsApp, email…)
+Allow: /img/Charlie_Mania/Anteprime/DSC06782.jpg
 
 Sitemap: https://brtnvisuals.com/sitemap.xml
